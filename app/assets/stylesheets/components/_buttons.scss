@@ -5,5 +5,8 @@
   font-size: 32px;
   background-color: beige;
   margin-top: 24px;
+  background-color: $button;
+  color: $button-text;
+  font-weight: bold;
   @include std-box-shadow;
 }
