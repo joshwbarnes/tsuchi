@@ -1,3 +1,3 @@
 class ListsController < ApplicationController
-  authorize @list
+  # authorize @list
 end
