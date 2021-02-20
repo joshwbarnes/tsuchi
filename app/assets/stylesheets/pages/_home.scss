@@ -4,3 +4,20 @@
   display: flex;
   flex-direction: column;
 }
+
+.container-logo {
+  @include flex-center-x-and-y;
+  height: 45%;
+}
+
+.container-login {
+  @include flex-center-x-and-y;
+  height: 55%;
+}
+
+.container-form {
+  @include flex-center-x-and-y;
+  flex-direction: column;
+  width: 80%;
+  height: 80%;
+}

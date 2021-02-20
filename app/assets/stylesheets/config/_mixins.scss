@@ -1,0 +1,10 @@
+/* Centers content both horizontally and vertically */
+@mixin flex-center-x-and-y {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin std-box-shadow {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}

@@ -1,4 +1,11 @@
 .login-input {
-  width: 236px;
-  height: 43px;
+  width: 80%;
+  height: 115px;
+  font-size: 40px;
+  text-align: center;
+  margin: 24px 0;
+  outline: none;
+  border-radius: 16px;
+  @include std-box-shadow;
+  border: none;
 }
