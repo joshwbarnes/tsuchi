@@ -1,9 +1,16 @@
-<h1> Your shopping Lists </h1>
-    <%  if policy(List).index? %>
-    <% @lists.each do |list| %>
-    <%= <ul>  <li> list </li> </ul> %>
-    <% end %>
-<% end %>
+
+  <%  if policy(List).index? %>
+    <h1> Your shopping Lists </h1>
+      <% @lists.each do |list| %>
+      <ul>
+        <li>
+          <%=list.name%>
+          <%= link_to "Update", edit_list_path(list) %>
+        </li>
+      </ul>
+      <% end %>
+      <%= link_to "New Shopping List", new_list_path %>
+  <% end %>
 
 
 
