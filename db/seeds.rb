@@ -1,17 +1,20 @@
 puts 'Cleaning DB - please wait...'
 
-puts 'Destroying users...'
-User.destroy_all
-puts 'Destroying lists...'
-List.destroy_all
-puts 'Destroying items...'
-Item.destroy_all
 puts 'Destroying user lists...'
 UserList.destroy_all
 
-puts 'Finished destroying DB 👹'
+puts 'Destroying items...'
+Item.destroy_all
 
-puts 'Playing God and creating people... 👶'
+puts 'Destroying lists...'
+List.destroy_all
+
+puts 'Destroying users...'
+User.destroy_all
+
+puts '👹 Finished destroying DB'
+
+puts '👶 Playing God and creating people...'
 
 # SEED USERS
 user_first_name = Faker::Name.first_name 
@@ -37,7 +40,7 @@ user_two = User.create!(
   password: '123456'
 )
 
-puts "Created #{user_first_name} #{user_last_name} and given to the Stork to deploy to Earth 🕊"
+puts "🕊 Created #{user_first_name} #{user_last_name} and given to the Stork to deploy to Earth"
 
 # SEED LISTS
 
@@ -45,31 +48,31 @@ puts "Created #{user_first_name} #{user_last_name} and given to the Stork to dep
     name: 'Christmas',
     due_date: Faker::Date.forward(days: 365)
   )
-  puts "Created #{list_one}. Let's get organised! 🍺"
+  puts "🍺 Created #{list_one.name}. Let's get organised!"
 
   list_two = List.create!(
     name: 'Groceries',
     due_date: Faker::Date.forward(days: 365)
   )
-  puts "Created #{list_two}. Let's get organised! 🍺"
+  puts "🍺 Created #{list_two.name}. Let's get organised!"
 
   list_three = List.create!(
     name: 'Birthday',
     due_date: Faker::Date.forward(days: 365)
   )
-  puts "Created #{list_three}. Let's get organised! 🍺"
+  puts "🍺 Created #{list_three.name}. Let's get organised!"
 
   list_four = List.create!(
     name: 'DIY',
     due_date: Faker::Date.forward(days: 365)
   )
-  puts "Created #{list_four}. Let's get organised! 🍺"
+  puts "🍺 Created #{list_four.name}. Let's get organised!"
 
   list_five = List.create!(
     name: 'Easter',
     due_date: Faker::Date.forward(days: 365)
   )
-  puts "Created #{list_five}. Let's get organised! 🍺"
+  puts "🍺 Created #{list_five.name}. Let's get organised!"
 
 # SEED ITEMS
 
@@ -137,7 +140,7 @@ items_one.each do |item|
     notification: true,
     list_id: list_one.id
   )
-  puts "Created #{item} in #{item_category} 🚀"
+  puts "🚀 Created #{item} in #{item_category}"
 end
 
 ###### List group TWO
@@ -154,7 +157,7 @@ items_two.each do |item|
     notification: true,
     list_id: list_two.id
   )
-  puts "Created #{item} in #{item_category} 🚀"
+  puts "👽 Created #{item} in #{item_category}"
 end
 
 ###### List group THREE
@@ -171,7 +174,7 @@ items_three.each do |item|
     notification: true,
     list_id: list_three.id
   )
-  puts "Created #{item} in #{item_category} 🚀"
+  puts "🪐 Created #{item} in #{item_category}"
 end
 
 ###### List group FOUR
@@ -188,7 +191,7 @@ items_four.each do |item|
     notification: true,
     list_id: list_four.id
   )
-  puts "Created #{item} in #{item_category} 🚀"
+  puts "🍆 Created #{item} in #{item_category}"
 end
 
 ###### List group FIVE
@@ -205,7 +208,7 @@ items_five.each do |item|
     notification: true,
     list_id: list_five.id
   )
-  puts "Created #{item} in #{item_category} 🚀"
+  puts "🍕 Created #{item} in #{item_category}"
 end
 
 # SEED USER_LISTS
