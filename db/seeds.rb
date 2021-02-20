@@ -39,28 +39,37 @@ user_two = User.create!(
 
 puts "Created #{user_first_name} #{user_last_name} and given to the Stork to deploy to Earth 🕊"
 
-
 # SEED LISTS
 
-lists = [
-  'Christmas',
-  'Groceries',
-  'Birthday',
-  'DIY',
-  'Easter'
-]
-
-lists.each do |list|
-  list_name = list
-  due_date = Faker::Date.forward(days: 365)
-
-  List.create!(
-    name: list_name, 
-    due_date: due_date
+  list_one = List.create!(
+    name: 'Christmas',
+    due_date: Faker::Date.forward(days: 365)
   )
+  puts "Created #{list_one}. Let's get organised! 🍺"
 
-  puts "Created #{list_name}. Let's get organised! 🍺"
-end
+  list_two = List.create!(
+    name: 'Groceries',
+    due_date: Faker::Date.forward(days: 365)
+  )
+  puts "Created #{list_two}. Let's get organised! 🍺"
+
+  list_three = List.create!(
+    name: 'Birthday',
+    due_date: Faker::Date.forward(days: 365)
+  )
+  puts "Created #{list_three}. Let's get organised! 🍺"
+
+  list_four = List.create!(
+    name: 'DIY',
+    due_date: Faker::Date.forward(days: 365)
+  )
+  puts "Created #{list_four}. Let's get organised! 🍺"
+
+  list_five = List.create!(
+    name: 'Easter',
+    due_date: Faker::Date.forward(days: 365)
+  )
+  puts "Created #{list_five}. Let's get organised! 🍺"
 
 # SEED ITEMS
 
@@ -126,7 +135,7 @@ items_one.each do |item|
     quantity: quantity,
     completed: false,
     notification: true,
-    lists_id: 1
+    list_id: list_one.id
   )
   puts "Created #{item} in #{item_category} 🚀"
 end
@@ -143,7 +152,7 @@ items_two.each do |item|
     quantity: quantity,
     completed: false,
     notification: true,
-    lists_id: 2
+    list_id: list_two.id
   )
   puts "Created #{item} in #{item_category} 🚀"
 end
@@ -160,7 +169,7 @@ items_three.each do |item|
     quantity: quantity,
     completed: false,
     notification: true,
-    lists_id: 3
+    list_id: list_three.id
   )
   puts "Created #{item} in #{item_category} 🚀"
 end
@@ -177,7 +186,7 @@ items_four.each do |item|
     quantity: quantity,
     completed: false,
     notification: true,
-    lists_id: 4
+    list_id: list_four.id
   )
   puts "Created #{item} in #{item_category} 🚀"
 end
@@ -194,7 +203,7 @@ items_five.each do |item|
     quantity: quantity,
     completed: false,
     notification: true,
-    lists_id: 5
+    list_id: list_five.id
   )
   puts "Created #{item} in #{item_category} 🚀"
 end
@@ -203,25 +212,25 @@ end
 
 UserList.create!(
   user_id: user_one.id,
-  list_id: 1
+  list_id: list_one.id
 )
 
 UserList.create!(
   user_id: user_one.id,
-  list_id: 2
+  list_id: list_two.id
 )
 
 UserList.create!(
   user_id: user_one.id,
-  list_id: 2
+  list_id: list_three.id
 )
 
 UserList.create!(
   user_id: user_two.id,
-  list_id: 4
+  list_id: list_four.id
 )
 
 UserList.create!(
   user_id: user_two.id,
-  list_id: 5
+  list_id: list_five.id
 )
