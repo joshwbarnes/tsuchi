@@ -37,7 +37,7 @@ user_two = User.create!(
   password: '123456'
 )
 
-puts "Created #{user_name} and given to the Stork to deploy to Earth 🕊"
+puts "Created #{user_first_name} #{user_last_name} and given to the Stork to deploy to Earth 🕊"
 
 
 # SEED LISTS
