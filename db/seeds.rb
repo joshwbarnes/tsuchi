@@ -14,12 +14,14 @@ puts 'Finished destroying DB 👹'
 puts 'Playing God and creating people... 👶'
 
 # SEED USERS
-user_name = Faker::Name.name 
+user_first_name = Faker::Name.first_name 
+user_last_name = Faker::Name.last_name
 user_address = Faker::Address.street_address
 user_mobile_number = Faker::PhoneNumber.cell_phone
 
 user_one = User.create!(
-  name: user_name, 
+  first_name: user_first_name, 
+  last_name: user_last_name,
   address: user_address, 
   email: 'user@user.com', 
   mobile_number: user_mobile_number,
@@ -27,7 +29,8 @@ user_one = User.create!(
 )
 
 user_two = User.create!(
-  name: user_name, 
+  first_name: user_first_name, 
+  last_name: user_last_name,
   address: user_address, 
   email: 'user2@user.com', 
   mobile_number: user_mobile_number,
