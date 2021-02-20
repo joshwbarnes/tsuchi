@@ -1,10 +1,18 @@
-/* Centers content both horizontally and vertically */
+/*
+  Centers content both horizontally and vertically 
+  Apply to parent container to center children elements
+  Parent container must have a set height to work
+*/
 @mixin flex-center-x-and-y {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* 
+  Standard box shadow to be applied where relevant
+  Gives a subtle shadow effect
+ */
 @mixin std-box-shadow {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
