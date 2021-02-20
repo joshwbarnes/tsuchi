@@ -1,8 +1,9 @@
 <h1> Your shopping Lists </h1>
+    <%  if policy(List).index? %>
     <% @lists.each do |list| %>
     <%= <ul>  <li> list </li> </ul> %>
     <% end %>
-   <% end %>
+<% end %>
 
 
 

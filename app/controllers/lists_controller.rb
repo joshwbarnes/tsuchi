@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
 
-
+  authorize @list
 
   def index
     @lists = List.all
