@@ -22,10 +22,13 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'faker'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'simple_form'
 gem 'devise'
+gem 'pundit'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 # Reduces boot times through caching; required in config/boot.rb

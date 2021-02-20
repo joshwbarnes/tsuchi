@@ -85,6 +85,8 @@ GEM
       warden (~> 1.2.3)
     erubi (1.10.0)
     execjs (2.7.0)
+    faker (2.15.1)
+      i18n (>= 1.6, < 2)
     ffi (1.14.2)
     font-awesome-sass (5.12.0)
       sassc (>= 1.11)
@@ -119,6 +121,8 @@ GEM
     public_suffix (4.0.6)
     puma (4.3.7)
       nio4r (~> 2.0)
+    pundit (2.1.0)
+      activesupport (>= 3.0.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-proxy (0.6.5)
@@ -226,11 +230,13 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  faker
   font-awesome-sass (~> 5.12.0)
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
+  pundit
   rails (~> 6.0.3, >= 6.0.3.4)
   sass-rails (>= 6)
   selenium-webdriver
