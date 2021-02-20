@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_18_093153) do
+ActiveRecord::Schema.define(version: 2021_02_20_052700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 2021_02_18_093153) do
     t.integer "quantity"
     t.boolean "completed", default: false
     t.boolean "notification"
-    t.bigint "lists_id"
-    t.index ["lists_id"], name: "index_items_on_lists_id"
+    t.bigint "list_id"
+    t.index ["list_id"], name: "index_items_on_list_id"
   end
 
   create_table "lists", force: :cascade do |t|
@@ -51,11 +51,15 @@ ActiveRecord::Schema.define(version: 2021_02_18_093153) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "mobile_number"
+    t.string "address"
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "items", "lists", column: "lists_id"
+  add_foreign_key "items", "lists"
   add_foreign_key "user_lists", "lists"
   add_foreign_key "user_lists", "users"
 end
