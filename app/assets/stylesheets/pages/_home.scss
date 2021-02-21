@@ -14,6 +14,7 @@
 
 .container-login {
   @include flex-center-x-and-y;
+  flex-direction: column;
   height: 55%;
   // Z-index require to keep on top of wave background
   z-index: 1;
@@ -23,7 +24,7 @@
   @include flex-center-x-and-y;
   flex-direction: column;
   width: 80%;
-  height: 80%;
+  height: 60%;
 }
 
 .custom-shape-divider-top-1613864219 {
@@ -45,4 +46,15 @@
 
 .custom-shape-divider-top-1613864219 .shape-fill {
   fill: url(#MyGradient);
+}
+
+.container-homepage-links {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.container-homepage-links a {
+  font-size: 2.5rem;
+  color: $paragraph;
 }
