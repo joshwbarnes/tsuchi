@@ -3,6 +3,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: $background;
 }
 
 .container-logo {
@@ -13,6 +14,8 @@
 .container-login {
   @include flex-center-x-and-y;
   height: 55%;
+  // Z-index require to keep on top of wave background
+  z-index: 1;
 }
 
 .container-form {
@@ -20,4 +23,25 @@
   flex-direction: column;
   width: 80%;
   height: 80%;
+}
+
+.custom-shape-divider-top-1613864219 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 130%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1613864219 svg {
+  position: relative;
+  display: block;
+  width: calc(180% + 1.7px);
+  height: 50vh;
+}
+
+.custom-shape-divider-top-1613864219 .shape-fill {
+  fill: url(#MyGradient);
 }
