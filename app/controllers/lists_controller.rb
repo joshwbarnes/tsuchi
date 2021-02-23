@@ -39,7 +39,7 @@ end
 private
 
 def list_params
-  params.require(:list_params).permit(:name)
+  params.require(:list_params).permit(:name, :due_date)
 end
 
   def set_list
