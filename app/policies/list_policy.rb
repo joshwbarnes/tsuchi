@@ -5,6 +5,11 @@ class ListPolicy < ApplicationPolicy
     end
   end
 
+   def show?
+   true
+  end
+
+
   def create?
     return true
   end
@@ -13,5 +18,6 @@ class ListPolicy < ApplicationPolicy
   def update?
     record.user == user
   end
+
 
 end

@@ -1,12 +1,12 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :edit, :update, :delete]
+  before_action :set_list, only: [:show, :edit, :update, :destroy]
 
-  def index
+def index
     @lists = policy_scope(List).order(created_at: :desc)
   end
 
-  def show
-   authorize @list
+def show
+  authorize @list
  end
 
  def new
@@ -34,12 +34,14 @@ def update
 end
 
 def delete
+  @list.destroy
+  redirect_to lists_path
 end
 
 private
 
 def list_params
-  params.require(:list_params).permit(:name)
+  params.require(:list).permit(:name, :due_date)
 end
 
   def set_list
