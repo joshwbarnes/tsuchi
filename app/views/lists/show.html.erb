@@ -1,1 +1,10 @@
-
+ <h2>
+  <% @lists.Each do |list| %>
+  <%= list.name %>
+  <%= link_to "Edit #{list.name}", new_list_path,
+  data: { confirm: "updated" } %>
+  <%= link_to "Delete #{list.name}", lists_path,method: :delete,
+  data: { confirm: "Are you sure?" } %>
+   <%= link_to "Back", lists_path %>
+  <% end %>
+</h2>
