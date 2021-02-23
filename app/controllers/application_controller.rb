@@ -16,6 +16,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [])
   end
 
+  # This method redirects the user to the lists#index page
+  # after they have logged in
+  def after_sign_in_path_for(resource)
+    stored_location_for(resource) || lists_path
+  end
+
   private
 
   def skip_pundit?
