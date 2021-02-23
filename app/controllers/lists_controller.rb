@@ -1,5 +1,4 @@
 class ListsController < ApplicationController
-
   def index
     @lists = policy_scope(List).order(created_at: :desc)
   end
@@ -46,5 +45,4 @@ class ListsController < ApplicationController
   def find_list
   @list = List.find(params[:id])
   end
-
 end

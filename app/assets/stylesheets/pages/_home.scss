@@ -1,1 +1,60 @@
 // Specific CSS for your home-page
+.container-homepage {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: $background;
+}
+
+.container-logo {
+  @include flex-center-x-and-y;
+  height: 45%;
+}
+
+.container-login {
+  @include flex-center-x-and-y;
+  flex-direction: column;
+  height: 55%;
+  // Z-index require to keep on top of wave background
+  z-index: 1;
+}
+
+.container-form {
+  @include flex-center-x-and-y;
+  flex-direction: column;
+  width: 80%;
+  height: 60%;
+}
+
+.custom-shape-divider-top-1613864219 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1613864219 svg {
+  position: relative;
+  display: block;
+  width: calc(180% + 1.7px);
+  height: 50vh;
+}
+
+.custom-shape-divider-top-1613864219 .shape-fill {
+  fill: url(#MyGradient);
+}
+
+.container-homepage-links {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.container-homepage-links a {
+  font-size: 2.5rem;
+  color: $paragraph;
+}

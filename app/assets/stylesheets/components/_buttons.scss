@@ -1,0 +1,11 @@
+#btn-login {
+  height: 70px;
+  width: 250px;
+  border-radius: 8px;
+  font-size: 32px;
+  margin-top: 24px;
+  background-color: $button;
+  color: $button-text;
+  font-weight: bold;
+  @include std-box-shadow;
+}
