@@ -1,5 +1,4 @@
 
-  <%  if policy(List).index? %>
     <h1> Your shopping Lists </h1>
       <% @lists.each do |list| %>
       <ul>
@@ -10,7 +9,7 @@
       </ul>
       <% end %>
       <%= link_to "New Shopping List", new_list_path %>
-  <% end %>
+
 
 
 
