@@ -1,4 +1,5 @@
 
+
 <h1>create new item</h1>
 <%#  if policy(List).index? %>
     <h1> Your shopping Lists </h1>
@@ -7,10 +8,13 @@
         <li>
           <%=list.name%>
           <%= link_to "Update", edit_list_path(list) %>
+          <%= link_to "Delete", list_path(list), method: :delete,
+  data: { confirm: "Are you sure?" } %>
         </li>
       </ul>
       <% end %>
       <%= link_to "New Shopping List", new_list_path %>
+
   <%# end %>
 
 <h1> Items </h1>
@@ -36,3 +40,4 @@
   <%#= link_to 'Cancel', root_path, class: 'text-danger mr-2' %>
   <%#= f.submit "Confirm", class: 'btn btn-success' %>
   <%# end %>
+

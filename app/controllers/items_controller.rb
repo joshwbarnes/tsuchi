@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only:[ :show, :destroy ]
+  before_action :set_item, only: [:show, :edit, :update, :delete]
 
-  def show
-  end
+  def show; end
 
   def create
     @item = Item.new(item_params)
+
     @list = List.find(params[:list_id])
     @item.list = @list
 
@@ -16,13 +16,17 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit; end
 
   def update
     @item.update(item_params)
     redirect_to list_path(@item.list)
   end
 
-
+  def delete
+    @item.destroy
+    redirect_to items_path, notice: 'Deleted!'
+  end
 
   private
 
@@ -30,6 +34,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
  def item_params
-   params.require(:item).permit()
+    params.require(:item).permit(:name, :item_category, :quantity, :completed, :notification)
   end
-
+end

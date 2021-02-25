@@ -14,15 +14,9 @@
   </div>
 
   <div class="container-login">
-    <!-- 
-      This form should be replaced with devise login 
-      Keep class and ID's to apply styling
-    -->
-    <form action="" class="container-form">  
-      <input id="email" class="login-input" type="text" placeholder="Email">
-      <input id="password" class="login-input" type="password" placeholder="Password">
-      <input id="btn-login" class="btn" type="submit" value="Login">
-    </form>
+
+    <%= render 'shared/login' %>
+
     <!-- 
       Links appear below the login form 
       'Sign up' re-directs to users homepage, showing their lists
