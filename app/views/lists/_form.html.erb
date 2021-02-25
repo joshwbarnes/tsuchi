@@ -1,7 +1,6 @@
-<%= form_for(@list) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :due_date %>
-  <%= f.submit %>
+<%= simple_form_for list do |f| %>
+  <%= f.input :name, label: 'Name' %>
+  <%= f.input :due_date, label: 'Due Date' %>
+  <%= f.submit "Confirm" %>
 <% end %>
 
-export

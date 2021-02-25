@@ -1,4 +1,3 @@
-<% if policy(@list).create? %>
-<%= @list.name %>
-<%= render "form" %>
-<% end %>
+<%# if policy(@list).create? %>
+<%= render "form", list: @list %>
+<%# end %>
