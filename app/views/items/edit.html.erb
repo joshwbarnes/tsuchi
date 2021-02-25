@@ -1,0 +1,4 @@
+<% if policy(@item).create? %>
+<%= @item.name %>
+<%= render "form" %>
+<% end %>
