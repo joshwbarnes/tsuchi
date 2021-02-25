@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :delete]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def show; end
 
@@ -23,8 +23,8 @@ class ItemsController < ApplicationController
     redirect_to list_path(@item.list)
   end
 
-  def delete
-    @item.destroy
+  def destroy
+    @item.delete
     redirect_to items_path, notice: 'Deleted!'
   end
 

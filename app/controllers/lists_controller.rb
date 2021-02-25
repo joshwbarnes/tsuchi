@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :edit, :update, :delete]
+  before_action :set_list, only: [:show, :edit, :update, :destroy]
 
   def show
      @lists = List.all
@@ -35,8 +35,8 @@ end
     @list.update(list_params)
   end
 
-def delete
-  @list.destroy
+def destroy
+  @list.delete
   redirect_to list_path(@list)
 end
 
