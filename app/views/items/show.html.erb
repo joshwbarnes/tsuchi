@@ -1,0 +1,16 @@
+<div class="container">
+   <h1><%= @item.name %></h1>
+    <p><%= @item.item_category %></p>
+    <p><%= @item.quantity %></p>
+    <p><%= @item.completed %></p>
+    <p><%= @item.notification %></p>
+  <div>
+    <ul>
+      <li><%= link_to "Edit", edit_item_path(@item) %></li>
+      <li><%= link_to "Remove", item_path(@item),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %></li>
+    </ul>
+  </div>
+  <%= link_to "Back", lists_path %>
+</div>
