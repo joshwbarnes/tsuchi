@@ -13,6 +13,14 @@ function success(pos) {
   }
   // console.log(`Latitude: ${lat} Longitude: ${long}`);
   initMapbox(coordinates);
+
+  // Call Google Places API
+
+  const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=500&types=book_store&key=PLACES_API_KEY`;
+
+  fetch(url)
+  .then(response => response.json())
+  .then(data => console.log(data));
 }
 
 function error(err) {
@@ -23,7 +31,7 @@ function getLocation() {
   var options = {
     enableHighAccuracy: true,
   }
-  let id = navigator.geolocation.watchPosition(success, error, options);
+  let id = navigator.geolocation.getCurrentPosition(success, error, options);
 }
 
 export { getLocation, success };
