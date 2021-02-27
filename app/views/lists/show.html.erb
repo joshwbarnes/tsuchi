@@ -2,43 +2,45 @@
 
 <h1>create new item</h1>
 <%#  if policy(List).index? %>
-    <h1> Your shopping Lists </h1>
-      <% @lists.each do |list| %>
-      <ul>
-        <li>
-          <span id="show_items"><%= link_to "#{list.name}", list_path(list, list_id: list.id) %></span>
-          <span id=""><%= list.due_date %></span>
-          <%= link_to "Update", edit_list_path(list) %>
-          <%= link_to "Delete", list_path(list), method: :delete,
-  data: { confirm: "Are you sure?" } %>
-        </li>
-      </ul>
-      <% end %>
-      <%= link_to "New Shopping List", new_list_path %>
+<h1> Your shopping Lists </h1>
+<% @lists.each do |list| %>
+<ul>
+  <li>
+   <%= link_to "#{list.name}", list_path(list, list_id: list.id) %>
+   <%= list.due_date %>
+   <%= link_to "Update", edit_list_path(list) %>
+   <%= link_to "Delete", list_path(list), method: :delete,
+   data: { confirm: "Are you sure?" } %>
+ </li>
+</ul>
+<% end %>
+<%= link_to "New Shopping List", new_list_path %>
 
-  <%# end %>
+<%# end %>
 
-  <% @items.each_with_index do |item, index| %>
 
-    <% if index == 0 && params[:list_id]%>
-    <h2> <%= item.list.name %></h2>
 
-    <% elsif index == 0 && !params[:list_id] %>
-    <h2>All your items</h2>
-    <% end %>
-      <ul>
-        <li>
-          <%=item.name%>
-          <%= item.item_category %>
-          <%= item.quantity %>
-          <button type="button" class="btn btn-outline-primary"><%= item.notification %></button>
-        </li>
-      </ul>
-      <% end %>
-      <% if @form %>
-         <p><%= render "form_item", item: @item, optional: true %></p>
-    <% end %>
-      <%= link_to "Add item", list_path(@list, new: true) %>
+  <% if !params[:list_id] %>
+  <h2>All your items</h2>
+  <% else %>
+  <% if @items[0] %>
+  <h2> <%= @items[0].list.name %></h2>
+  <% end %>
+  <% end %>
+  <% if @form %>
+  <p><%= render "form_item", item: @item, optional: !params[:list_id] %></p>
+  <% end %>
+<% @items.each_with_index do |item, index| %>
+    <ul>
+      <li>
+        <%= link_to "#{item.name}", item_path(item) %>
+        <%= item.item_category %>
+        <%= item.quantity %>
+        <button type="button" class="btn btn-outline-primary"><%= item.notification %></button>
+      </li>
+    </ul>
+<% end %>
+<%= link_to "Add item", list_path(@list, list_id: params[:list_id], new: true) %>
 
 
 

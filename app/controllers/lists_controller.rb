@@ -2,12 +2,12 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
 
   def show
-    @lists = List.order(:id)
+    @lists = current_user.lists.order(:id)
      #authorize @list
     if params[:list_id]
-      @items = Item.where(list_id: params[:list_id])
+      @items = Item.where(list_id: params[:list_id]).order(created_at: :desc)
     else
-      @items = Item.all
+      @items = Item.all.order(created_at: :desc)
     end
       @item = Item.new
       @form = params[:new]
@@ -22,6 +22,8 @@ def create
   @list = List.new(list_params)
   #authorize @list
   if @list.save
+    @user_list = UserList.new(list_id: @list.id, user_id: current_user.id)
+    @user_list.save
     redirect_to list_path(@list, list_id: params[:list_id])
   else
     render :new
@@ -42,8 +44,14 @@ end
   end
 
 def destroy
-  @list.delete
-  redirect_to list_path(@list)
+  # @user_list = User_List.find(params[:list_id])
+  # @list.user_list = @user_list
+  @list.destroy
+  if current_user.lists.count != 0
+  redirect_to list_path(current_user.lists[0])
+  else
+  redirect_to new_list_path
+  end
 end
 
 private

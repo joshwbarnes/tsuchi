@@ -19,7 +19,11 @@ class ApplicationController < ActionController::Base
   # This method redirects the user to the lists#index page
   # after they have logged in
   def after_sign_in_path_for(resource)
-    stored_location_for(resource) || lists_path
+    if current_user.lists.count != 0
+    list_path(current_user.lists[0])
+    else
+    new_list_path
+    end
   end
 
   private
