@@ -16,7 +16,7 @@ function success(pos) {
 
   // Call Google Places API
 
-  const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=500&types=book_store&key=AIzaSyBDLUwUgl6WQNxeYdULbx-zKHeuI3A3QaY`;
+  const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=500&types=book_store&key=PLACES_API_KEY`;
 
   fetch(url)
   .then(response => response.json())
