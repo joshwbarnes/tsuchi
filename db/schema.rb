@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_02_25_082436) do
-
+  
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,7 +24,9 @@ ActiveRecord::Schema.define(version: 2021_02_25_082436) do
     t.boolean "completed", default: false
     t.boolean "notification"
     t.bigint "list_id"
+    t.bigint "user_id", null: false
     t.index ["list_id"], name: "index_items_on_list_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "lists", force: :cascade do |t|
@@ -62,6 +64,7 @@ ActiveRecord::Schema.define(version: 2021_02_25_082436) do
   end
 
   add_foreign_key "items", "lists"
+  add_foreign_key "items", "users"
   add_foreign_key "user_lists", "lists"
   add_foreign_key "user_lists", "users"
 end

@@ -1,2 +1,5 @@
 
-<%= render "form" %>
+<%# if policy(@list).create? %>
+<%= render "form_list", list: @list %>
+
+<%# end %>

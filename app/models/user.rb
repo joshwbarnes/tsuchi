@@ -7,6 +7,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :user_lists
 
+  has_many :items
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 end
