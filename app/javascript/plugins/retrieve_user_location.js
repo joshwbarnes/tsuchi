@@ -13,6 +13,14 @@ function success(pos) {
   }
   // console.log(`Latitude: ${lat} Longitude: ${long}`);
   initMapbox(coordinates);
+
+  // Call places API
+
+  const url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&key=AIzaSyBDLUwUgl6WQNxeYdULbx-zKHeuI3A3QaY'
+
+  fetch(url)
+  .then(response => response.json())
+  .then(data => console.log(data));
 }
 
 function error(err) {
