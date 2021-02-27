@@ -5,14 +5,24 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-
     @list = List.find(params[:list_id])
-    @item.list = @list
 
+    if params[:optional] != "true"
+    @item.list = @list
+    end
+    @user = current_user
+    @item.user = @user
     if @item.save
-      redirect_to list_path(@list)
+      if params[:optional] == "true"
+        redirect_to list_path(@list)
+      else
+        redirect_to list_path(@list, list_id: params[:list_id])
+      end
+
     else
-      render :new
+      @lists = List.all
+      @items = Item.where(list_id: params[:list_id])
+      render "lists/show"
     end
   end
 
