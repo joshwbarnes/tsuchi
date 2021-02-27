@@ -1,0 +1,9 @@
+<%= simple_form_for [@list, @item] do |f| %>
+  <%= f.input :name, value="@item.name"%>
+  <%= f.input :item_category, value="@item.category" %>
+  <%= f.input :quantity, value="@item.quantity" %>
+  <%= f.input :completed, value="@item.completed"%>
+  <%= f.input :notification, value="@item.notification" %>
+  <input type="hidden" name="optional" value="<%= optional %>">
+  <%= f.submit %>
+<% end %>

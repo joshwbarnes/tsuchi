@@ -9,8 +9,8 @@
    <%= link_to "#{list.name}", list_path(list, list_id: list.id) %>
    <%= list.due_date %>
    <%= link_to "Update", edit_list_path(list) %>
-   <%= link_to "Delete", list_path(list), method: :delete,
-   data: { confirm: "Are you sure?" } %>
+    <%= link_to "Share with buddy", list_path(list), method: :share%>
+   <%= link_to "Delete", list_path(list), method: :delete, data: { confirm: "Are you sure?" } %>
  </li>
 </ul>
 <% end %>
@@ -27,8 +27,11 @@
   <h2> <%= @items[0].list.name %></h2>
   <% end %>
   <% end %>
-  <% if @form %>
-  <p><%= render "form_item", item: @item, optional: !params[:list_id] %></p>
+  <% if @new_form %>
+  <p><%= render "form_new_item", item: @item, optional: !params[:list_id] %></p>
+  <% end %>
+  <% if @edit_form %>
+  <p><%= render "form_edit_item", item: @item, optional: !params[:list_id] %></p>
   <% end %>
 <% @items.each_with_index do |item, index| %>
     <ul>
@@ -37,6 +40,7 @@
         <%= item.item_category %>
         <%= item.quantity %>
         <button type="button" class="btn btn-outline-primary"><%= item.notification %></button>
+        <%= link_to "Edit", list_path(@list, list_id: params[:list_id], edit: true) %>
       </li>
     </ul>
 <% end %>

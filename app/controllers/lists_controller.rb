@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_list, only: [:show, :edit, :update, :destroy, :share]
 
   def show
     @lists = current_user.lists.order(:id)
@@ -10,7 +10,9 @@ class ListsController < ApplicationController
       @items = Item.all.order(created_at: :desc)
     end
       @item = Item.new
-      @form = params[:new]
+      @new_form = params[:new]
+      @edit_form = params[:edit]
+
   end
 
   def new
@@ -52,6 +54,12 @@ def destroy
   else
   redirect_to new_list_path
   end
+
+  def share
+  @user = User.where(:email)
+  UserList.new(list_id: @list.id, user_id: @user.id)
+  end
+
 end
 
 private
