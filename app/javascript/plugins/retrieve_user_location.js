@@ -14,9 +14,9 @@ function success(pos) {
   // console.log(`Latitude: ${lat} Longitude: ${long}`);
   initMapbox(coordinates);
 
-  // Call places API
+  // Call Google Places API
 
-  const url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&key=AIzaSyBDLUwUgl6WQNxeYdULbx-zKHeuI3A3QaY'
+  const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=500&types=book_store&key=AIzaSyBDLUwUgl6WQNxeYdULbx-zKHeuI3A3QaY`;
 
   fetch(url)
   .then(response => response.json())
@@ -31,7 +31,7 @@ function getLocation() {
   var options = {
     enableHighAccuracy: true,
   }
-  let id = navigator.geolocation.watchPosition(success, error, options);
+  let id = navigator.geolocation.getCurrentPosition(success, error, options);
 }
 
 export { getLocation, success };
