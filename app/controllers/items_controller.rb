@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @list = List.find(params[:list_id])
+
     if params[:optional] != "true"
     @item.list = @list
     end

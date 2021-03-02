@@ -1,7 +1,7 @@
 
 <%= simple_form_for list do |f| %>
   <%= f.input :name, label: 'Name' %>
-  <%= f.input :due_date, label: 'Due Date' %>
+  <div id='due_date'><%= f.input :due_date, label: 'Due Date',as: :string, type: :text %></div>
   <%= f.submit "Confirm" %>
 
 <% end %>
