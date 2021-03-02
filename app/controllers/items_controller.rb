@@ -27,26 +27,28 @@ class ItemsController < ApplicationController
   end
 
 
-
   def update
      @item.update(item_params)
      if params[:optional] == "true"
         redirect_to list_path(@list)
       else
-        redirect_to list_path(@list, list_id: params[:list_id])
+        redirect_to list_path(@item.list, list_id: params[:list_id])
       end
   end
 
   def destroy
-    @list = List.find(params[:list_id])
     @item.destroy
-    redirect_to list_path(@list, list_id: params[:list_id]), notice: 'Deleted!'
+    redirect_to list_path(set_list,list_id: params[:list_id]), notice: 'Deleted!'
   end
 
   private
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set_list
+  List.find(params[:list_id])
   end
 
   def item_params

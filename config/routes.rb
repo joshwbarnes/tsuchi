@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   root to: "pages#index"
 
  resources :lists, except: [:index] do
-  resources :items, only: [:create]
+  resources :items, only: [:create, :destroy, :update]
   end
-  resources :items, only: [:show, :update, :destroy, :edit]
+  resources :items, only: [:show]
 
 end

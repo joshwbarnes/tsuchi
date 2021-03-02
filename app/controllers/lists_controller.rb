@@ -9,8 +9,11 @@ class ListsController < ApplicationController
     else
       @items = Item.all.order(created_at: :desc)
     end
-      @item = Item.new
+      @item_new = Item.new
       @new_form = params[:new]
+      if params[:item_id]
+      @item_to_edit = Item.find(params[:item_id])
+      end
       @edit_form = params[:edit]
 
   end
@@ -34,7 +37,6 @@ end
 
   def edit
     @list = set_list
-
     #authorize @list
   end
 
@@ -55,10 +57,6 @@ def destroy
   redirect_to new_list_path
   end
 
-  def share
-  @user = User.where(:email)
-  UserList.new(list_id: @list.id, user_id: @user.id)
-  end
 
 end
 
