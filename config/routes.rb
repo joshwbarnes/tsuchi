@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :items, only: [:create]
   end
   resources :items, only: [:destroy]
+  get 'items/:id/nb/:nearby', to: 'items#show', as: :show
 
 end
