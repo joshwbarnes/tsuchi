@@ -16,11 +16,15 @@ const initMapbox = (coordinates) => {
       zoom: 15,
       center: [coordinates.long, coordinates.lat] // starting position [lng, lat]
     });
-
     let marker = new mapboxgl.Marker()
       .setLngLat([coordinates.long, coordinates.lat])
       .addTo(map)
   }
+
+    // Call route to Google Place API in Places Controller
+    fetch(`/places?lat=${coordinates.lat}&long=${coordinates.long}`)
+    .then(response => response.json())
+    .then(data => console.log(data)); // Log the API response from Google Places
 };
 
 export { initMapbox };

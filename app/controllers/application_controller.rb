@@ -20,15 +20,19 @@ class ApplicationController < ActionController::Base
   # after they have logged in
   def after_sign_in_path_for(resource)
     if current_user.lists.count != 0
-    list_path(current_user.lists[0])
+      list_path(current_user.lists[0])
     else
-    new_list_path
+      new_list_path
     end
   end
 
   private
 
+#   def skip_pundit?
+#     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/ || controller_name == 'places'
+#   end
+end
+=======
   # def skip_pundit?
   #   devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   # end
-end

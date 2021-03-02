@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   end
 
   resources :items, only: [:show, :update, :destroy, :edit]
-
+  
+  get '/places', to: 'places#call'
 end
