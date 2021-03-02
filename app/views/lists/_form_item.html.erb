@@ -1,0 +1,16 @@
+<%= simple_form_for [@list, @item] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :item_category %>
+  <%= f.input :quantity %>
+  <%= f.input :completed %>
+  <%= f.input :notification %>
+  <input type="hidden" name="optional" value="<%= optional %>">
+  <%= f.submit %>
+<% end %>
+
+<%#= simple_form_for [@list, @item] do |f| %>
+  <%#= f.input :name, label %>
+  <%#= f.input :content, label: "How was your monster?"%>
+  <%#= link_to 'Cancel', root_path, class: 'text-danger mr-2' %>
+  <%#= f.submit "Confirm", class: 'btn btn-success' %>
+  <%# end %>

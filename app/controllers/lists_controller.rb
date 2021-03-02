@@ -1,41 +1,57 @@
 class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
 
-def index
-    @lists = policy_scope(List).order(created_at: :desc)
+  def show
+    @lists = current_user.lists.order(:id)
+     #authorize @list
+    if params[:list_id]
+      @items = Item.where(list_id: params[:list_id]).order(created_at: :desc)
+    else
+      @items = Item.all.order(created_at: :desc)
+    end
+      @item = Item.new
+      @form = params[:new]
   end
 
-def show
-  authorize @list
- end
-
- def new
-  @list = List.new
-  authorize @list
-end
+  def new
+    @list = List.new
+     #authorize @list
+  end
 
 def create
   @list = List.new(list_params)
-  authorize @list
+  #authorize @list
   if @list.save
-    redirect_to list_path(@list)
+    @user_list = UserList.new(list_id: @list.id, user_id: current_user.id)
+    @user_list.save
+    redirect_to list_path(@list, list_id: params[:list_id])
   else
     render :new
   end
 end
 
-def edit
-  authorize @list
-end
+  def edit
+    @list = set_list
 
-def update
-  authorize @list
-  @list.update(list_params)
-end
+    #authorize @list
+  end
 
-def delete
+  def update
+    @list = set_list
+    #authorize @list
+    @list.update(list_params)
+    redirect_to list_path(@list)
+  end
+
+def destroy
+  # @user_list = User_List.find(params[:list_id])
+  # @list.user_list = @user_list
   @list.destroy
-  redirect_to lists_path
+  if current_user.lists.count != 0
+  redirect_to list_path(current_user.lists[0])
+  else
+  redirect_to new_list_path
+  end
 end
 
 private

@@ -1,51 +1,52 @@
-# Controller for items
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
-  def index
-    @items = policy_scope(Item).order(created_at: :desc)
+
+  def show
+    @nearby = params[:nearby]
   end
-  
-  def show; end
-  
-  def new
-    @item = Item.new
-    authorize @item
-  end
-  
+
   def create
     @item = Item.new(item_params)
-    @item.user = current_user
-    authorize @item
-    
+    @list = List.find(params[:list_id])
+
+    if params[:optional] != "true"
+    @item.list = @list
+    end
+    @user = current_user
+    @item.user = @user
     if @item.save
-      redirect_to @item
+      if params[:optional] == "true"
+        redirect_to list_path(@list)
+      else
+        redirect_to list_path(@list, list_id: params[:list_id])
+      end
+
     else
-      render :new
+      @lists = List.all
+      @items = Item.where(list_id: params[:list_id])
+      render "lists/show"
     end
   end
-  
+
   def edit; end
-  
+
   def update
-    if @item.update(item_params)
-      redirect_to @item
-    else
-      render :edit
-    end
+    @item.update(item_params)
+    redirect_to list_path(@item.list)
   end
-  
+
   def destroy
-    @item.destroy
+    @item.delete
     redirect_to items_path, notice: 'Deleted!'
   end
-  
+
   private
-  def item_params
-    params.require(:item).permit(:name, :item_category, :quantity, :completed, :notification)
-  end
-  
+
   def set_item
     @item = Item.find(params[:id])
-    authorize @item
+  end
+
+  def item_params
+    params.require(:item).permit(:name, :item_category, :quantity, :completed, :notification)
   end
 end

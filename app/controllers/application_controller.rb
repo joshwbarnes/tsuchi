@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
-  include Pundit
+  # before_action :authenticate_user!
+  # #include Pundit
 
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  # before_action :configure_permitted_parameters, if: :devise_controller?
 
   # Pundit: white-list approach.
-  after_action :verify_authorized, except: :index, unless: :skip_pundit?
-  after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
+  # after_action :verify_authorized, except: :index, unless: :skip_pundit?
+  # after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
@@ -19,12 +19,20 @@ class ApplicationController < ActionController::Base
   # This method redirects the user to the lists#index page
   # after they have logged in
   def after_sign_in_path_for(resource)
-    stored_location_for(resource) || lists_path
+    if current_user.lists.count != 0
+      list_path(current_user.lists[0])
+    else
+      new_list_path
+    end
   end
 
   private
 
-  def skip_pundit?
-    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/ || controller_name == 'places'
-  end
+#   def skip_pundit?
+#     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/ || controller_name == 'places'
+#   end
 end
+=======
+  # def skip_pundit?
+  #   devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  # end
