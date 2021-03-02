@@ -1,4 +1,4 @@
-# class ItemPolicy < ApplicationPolicy
+class ItemPolicy < ApplicationPolicy
 #   class Scope < Scope
 #     def resolve
 #       scope.where(user: user)
@@ -20,4 +20,4 @@
 #   def destroy?
 #     user == record.user
 #   end
-# end
+end

@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'geocoder'
 gem 'faker'
 
+gem 'rest-client'
+
 gem 'dotenv-rails'
 
 # Use Active Storage variant

@@ -1,7 +1,9 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
 
-  def show; end
+  def show
+    @nearby = params[:nearby]
+  end
 
   def create
     @item = Item.new(item_params)

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
  resources :lists, except: [:index] do
   resources :items, only: [:create, :destroy, :update]
   end
+  
   resources :items, only: [:show]
-
+  
+  get '/places', to: 'places#call'
 end
