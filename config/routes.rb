@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   root to: "pages#index"
 
   resources :lists, :items
+
+  get '/places', to: 'places#call'
 end
