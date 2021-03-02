@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_list, only: [:show, :edit, :update, :destroy, :share]
 
   def show
     @lists = current_user.lists.order(:id)
@@ -9,8 +9,12 @@ class ListsController < ApplicationController
     else
       @items = Item.all.order(created_at: :desc)
     end
-      @item = Item.new
-      @form = params[:new]
+      @item_new = Item.new
+      @new_form = params[:new]
+    if params[:item_id]
+      @item_to_edit = Item.find(params[:item_id])
+    end
+      @edit_form = params[:edit]
   end
 
   def new
@@ -18,21 +22,20 @@ class ListsController < ApplicationController
      #authorize @list
   end
 
-def create
-  @list = List.new(list_params)
-  #authorize @list
-  if @list.save
-    @user_list = UserList.new(list_id: @list.id, user_id: current_user.id)
-    @user_list.save
-    redirect_to list_path(@list, list_id: params[:list_id])
-  else
-    render :new
+  def create
+    @list = List.new(list_params)
+    #authorize @list
+    if @list.save
+      @user_list = UserList.new(list_id: @list.id, user_id: current_user.id)
+      @user_list.save
+      redirect_to list_path(@list, list_id: params[:list_id])
+    else
+      render :new
+    end
   end
-end
 
   def edit
     @list = set_list
-
     #authorize @list
   end
 
@@ -43,24 +46,27 @@ end
     redirect_to list_path(@list)
   end
 
-def destroy
+  def destroy
   # @user_list = User_List.find(params[:list_id])
   # @list.user_list = @user_list
-  @list.destroy
-  if current_user.lists.count != 0
-  redirect_to list_path(current_user.lists[0])
-  else
-  redirect_to new_list_path
+    @list.destroy
+    if current_user.lists.count != 0
+      redirect_to list_path(current_user.lists[0])
+    else
+      redirect_to new_list_path
   end
-end
 
-private
 
-def list_params
-  params.require(:list).permit(:name, :due_date)
-end
+  end
+
+  private
+
+  def list_params
+   params.require(:list).permit(:name, :due_date)
+  end
 
   def set_list
     @list = List.find(params[:id])
   end
+
 end

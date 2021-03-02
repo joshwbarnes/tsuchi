@@ -1,0 +1,9 @@
+<%= simple_form_for [@list,item] do |f| %>
+  <%= f.input :name, input_html: {value: f.object.name}%>
+  <%= f.input :item_category, input_html: {value: f.object.item_category}%>
+  <%= f.input :quantity, input_html: {value: f.object.quantity} %>
+  <%= f.input :completed, input_html: {value: f.object.completed}%>
+  <%= f.input :notification, input_html: {value: f.object.notification} %>
+  <%= f.submit %>
+<% end %>
+
