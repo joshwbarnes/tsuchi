@@ -26,13 +26,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  private
+  # private
 
 #   def skip_pundit?
 #     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/ || controller_name == 'places'
 #   end
 end
-=======
   # def skip_pundit?
   #   devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   # end
