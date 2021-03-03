@@ -1,30 +1,35 @@
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { displayNearbyStores } from './find_nearby_places';
+
 
 // eslint-disable-next-line import/no-webpack-loader-syntax 
 mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
-const initMapbox = (coordinates) => {
+// results is an array
+const initMapbox = (results, lat, long) => {
   const mapElement = document.getElementById('map');
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10',
       zoom: 15,
-      center: [coordinates.long, coordinates.lat] // starting position [lng, lat]
+      center: [long, lat] // starting position [lng, lat]
     });
-    let marker = new mapboxgl.Marker()
-      .setLngLat([coordinates.long, coordinates.lat])
+    // Nearby shops related to item category
+    results.forEach((marker) => {
+      new mapboxgl.Marker()
+      .setLngLat([marker.geometry.location.lng, marker.geometry.location.lat])
       .addTo(map)
+    });
+    // Users current location
+    new mapboxgl.Marker()
+    .setLngLat([long, lat])
+    .addTo(map)
   }
-
-    // Call route to Google Place API in Places Controller
-    fetch(`/places?lat=${coordinates.lat}&long=${coordinates.long}`)
-    .then(response => response.json())
-    .then(data => console.log(data)); // Log the API response from Google Places
+  displayNearbyStores(results);
 };
 
 export { initMapbox };

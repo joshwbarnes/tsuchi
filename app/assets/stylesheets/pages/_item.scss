@@ -1,0 +1,59 @@
+#container-item {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+}
+
+#item-name {
+  background-color: $tertiary;
+  color: $stroke;
+  width: 60%;
+  margin: 24px auto;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+#item-category {
+  display: none;
+}
+
+#map {
+  height: 45vh;
+  margin: 0;
+  width: 100%;
+}
+
+#footer-item {
+  position: absolute;
+  bottom: 0;
+  height: 5vh;
+  background-color: $secondary;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .back {
+    color: $stroke;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    padding: 8px;
+    margin-left: 8px;
+  }
+
+  i {
+    font-size: 3.5rem;
+    color: $stroke;
+  }
+}
+
+.nearby-stores {
+  padding-top: 24px;
+}
+
+.store-name {
+  @include std-box-shadow;
+  padding: 32px;
+  border-radius: 16px;
+}

@@ -1,22 +1,30 @@
-<div class="container">
-   <h1><%= @item.name %></h1>
-    <p><%= @item.item_category %></p>
-    <p><%= @item.quantity %></p>
-    <p><%= @item.completed %></p>
-    <p><%= @item.notification %></p>
-  <div>
-    <ul>
-      <li><%= link_to "Edit", edit_item_path(@item) %></li>
-      <li><%= link_to "Remove", item_path(@item),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" } %></li>
-    </ul>
+<div class="container-item-page">
+  <div class="container" id="container-item">
+    <h2 id="item-name"><%= @item.name %></h2>
+    <p id="item-category"><%= @item.item_category %></p>
+    <div>
+      <ul>
+        <li><%= link_to "Edit", edit_item_path(@item) %></li>
+        <li><%= link_to "Remove", item_path(@item),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } %></li>
+      </ul>
+    </div>
+    <div class="container-nearby-stores">
+      <h2>Nearby stores</h2>
+      <div class="nearby-stores"></div>
+    </div>
   </div>
-  <%= link_to "Back", lists_path %>
-</div>
 
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="coordinates"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div id="map"
+      data-markers="coordinates"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
+  <footer id="footer-item">
+    <%= link_to lists_path, class: "back" do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+    <i class="fas fa-home"></i>
+  </footer>
 </div>
