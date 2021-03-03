@@ -12,16 +12,5 @@ import { getLocation } from '../plugins/retrieve_user_location';
 import { init_flatpickr } from '../plugins/init_flatpickr';
 document.addEventListener('turbolinks:load', () => {
   getLocation();
-  // initMapbox(getLocation());
   init_flatpickr();
-})
-
-// Uncomment to copy all static images under ../images to the output folder and reference
-// them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
-// or the `imagePath` JavaScript helper below.
-//
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
-//= require datetime_picker_input
-
-
+});

@@ -2,6 +2,7 @@
 // // It registers a handler function that will be called automatically
 // // each time the position of the device changes, returning the updated function
 import { initMapbox } from './init_mapbox';
+import { callPlacesAPI } from './find_nearby_places';
 
 function success(pos) {
   var crd = pos.coords;
@@ -11,9 +12,8 @@ function success(pos) {
     lat: lat,
     long: long
   }
-  // console.log(`Latitude: ${lat} Longitude: ${long}`);
-  initMapbox(coordinates);
-
+  callPlacesAPI(coordinates);
+  // initMapbox(coordinates);
 }
 
 function error(err) {
