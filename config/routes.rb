@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   root to: "pages#index"
 
  resources :lists, except: [:index] do
-  resources :items, only: [:create, :destroy]
+  resources :items, only: [:create, :destroy, :edit, :update]
   end
   
-  resources :items, only: [:show, :edit, :update]
+  resources :items, only: [:show]
   
   get '/places', to: 'places#call'
 end

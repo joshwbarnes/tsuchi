@@ -33,7 +33,17 @@
         <%= link_to "#{item.name}", item_path(item) %>
         <%= item.item_category %>
         <%= item.quantity %>
-        <button type="button" class="btn btn-outline-primary"><%= item.notification %></button>
+
+         <label class="switch">
+       
+        <% if item.notification == true %>
+          <input type="checkbox" checked>
+        <% else %>
+          <input type="checkbox">
+        <% end %>
+        <span class="slider round"></span>
+        </label>
+
         <%= link_to "Edit", list_path(@list,item_id: item.id, list_id: params[:list_id], edit: true) %>
         <%= link_to "Delete", list_item_path(@list, item), method: :delete, data: { confirm: "Are you sure?" } %>
       </li>
