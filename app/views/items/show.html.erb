@@ -2,14 +2,18 @@
   <div class="container" id="container-item">
     <h2 id="item-name"><%= @item.name %></h2>
     <p id="item-category"><%= @item.item_category %></p>
-    <div>
-      <ul>
-        <li><%= link_to "Edit", edit_list_item_path(@item) %></li>
-        <li><%= link_to "Remove", item_path(@item),
+  
+    <div class="container-item-edit-actions">
+        <%= link_to edit_list_item_path(@item) do %>
+          <i class="fas fa-edit text-info"></i>
+        <% end %>
+        <%= link_to item_path(@item),
                         method: :delete,
-                        data: { confirm: "Are you sure?" } %></li>
-      </ul>
+                        data: { confirm: "Are you sure?" } do %>
+          <i class="fas fa-trash-alt text-danger"></i>
+        <% end %>
     </div>
+
     <div class="container-nearby-stores">
       <h2>Nearby stores</h2>
       <div class="nearby-stores"></div>

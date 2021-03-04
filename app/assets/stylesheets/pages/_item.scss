@@ -1,16 +1,30 @@
+.container-item-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $tertiary;
+}
+
 #container-item {
   display: flex;
   flex-direction: column;
   height: 50vh;
+  @include std-box-shadow;
+  padding: 8px 40px;
+  margin: 16px;
+  border-radius: 16px;
+  background-color: $background;
 }
 
 #item-name {
-  background-color: $tertiary;
-  color: $stroke;
+  background-color: $secondary;
+  color: $paragraph;
   width: 60%;
   margin: 24px auto;
   border-radius: 16px;
   padding: 24px;
+  text-align: center;
+  font-size: 2.5rem;
 }
 
 #item-category {
@@ -50,10 +64,21 @@
 
 .nearby-stores {
   padding-top: 24px;
+  font-size: 1.5rem;
 }
 
 .store-name {
   @include std-box-shadow;
   padding: 32px;
   border-radius: 16px;
+}
+
+.container-item-edit-actions {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+
+  i {
+    padding: 0 16px;
+  }
 }
