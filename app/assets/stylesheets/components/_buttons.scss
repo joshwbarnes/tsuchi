@@ -9,3 +9,18 @@
   font-weight: bold;
   @include std-box-shadow;
 }
+
+#btn-list{
+  height: 70px;
+  width: 250px;
+  border-radius: 8px;
+  font-size: 24px;
+  margin-top: 24px;
+  background-color: $button;
+  color: $button-text;
+  font-weight: bold;
+  @include std-box-shadow;
+  display: flex;
+  flex: wrap;
+
+}
