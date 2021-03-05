@@ -43,7 +43,7 @@ class ListsController < ApplicationController
     @list = set_list
     #authorize @list
     @list.update(list_params)
-    redirect_to list_path(@list)
+    redirect_to list_path(@list, list_id: params[:list_id])
   end
 
   def destroy
@@ -55,7 +55,6 @@ class ListsController < ApplicationController
     else
       redirect_to new_list_path
   end
-
 
   end
 

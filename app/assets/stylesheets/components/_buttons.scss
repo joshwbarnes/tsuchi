@@ -11,8 +11,8 @@
 }
 
 #btn-list{
-  height: 70px;
-  width: 250px;
+  height: 90px;
+  width: 150px;
   border-radius: 8px;
   font-size: 24px;
   margin-top: 24px;
@@ -22,5 +22,8 @@
   @include std-box-shadow;
   display: flex;
   flex: wrap;
-
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
+
