@@ -16,17 +16,20 @@
 
 <%# end %>
 
-
-
   <% if !params[:list_id] %>
     <h2>All your items</h2>
   <% elsif @items[0] %>
     <h2> <%= @items[0].list.name %></h2>
   <%= @items[0].list.due_date %>
         <%= link_to "Update", edit_list_path(@items[0].list) %>
-        <%= link_to "Share with buddy", list_path(@items[0].list), method: :share%>
+        <%= link_to "Share with buddy", list_path(@items[0].list, buddy: true)%>
         <%= link_to "Delete", list_path(@items[0].list), method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
+
+<% if @new_buddy %>
+    <p><%= render "user_lists/form_buddy", list: @items[0].list %></p>
+  <% end %>
+
   <% if @new_form %>
     <p><%= render "form_new_item", item: @item_new, optional: !params[:list_id] %></p>
   <% end %>

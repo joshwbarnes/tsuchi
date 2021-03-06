@@ -2,9 +2,11 @@ class UserList < ApplicationRecord
   belongs_to :user
   belongs_to :list
 
-  def share
-    @user = User.find_by(email: ())
-    UserList.new(list_id: @list.id, user_id: @user.id)
+  def share(email)
+    @buddy = User.find_by(email:(email))
+    if @buddy
+      self.user = @buddy
+    end
   end
 
 end
