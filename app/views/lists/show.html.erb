@@ -22,7 +22,7 @@
     <h2> <%= @items[0].list.name %></h2>
   <%= @items[0].list.due_date %>
         <%= link_to "Update", edit_list_path(@items[0].list) %>
-        <%= link_to "Share with buddy", list_path(@items[0].list, buddy: true)%>
+        <%= link_to "Share with buddy", list_path(@items[0].list, list_id: params[:list_id], buddy: true)%>
         <%= link_to "Delete", list_path(@items[0].list), method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
 
