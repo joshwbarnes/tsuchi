@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Tsuchi</title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,5 +15,11 @@
   <body>
     <%= render 'shared/flashes' %>
     <%= yield %>
+
+        <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8z-Yroy9r7IVN8qIzH8mYFxJr0n6S170&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
   </body>
 </html>

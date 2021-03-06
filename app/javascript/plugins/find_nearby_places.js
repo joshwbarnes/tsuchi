@@ -1,4 +1,4 @@
-import { initMapbox } from './init_mapbox';
+// import { initMapbox } from './init_mapbox';
 
 // result.geometry.location.lat
 
@@ -29,7 +29,7 @@ const callPlacesAPI = (coordinates) => {
   let itemCategory = document.querySelector('#item-category').innerText;
   fetch(`/places?category=${itemCategory}&lat=${lat}&long=${long}`)
   .then(response => response.json())
-  .then(data => initMapbox(data.results, lat, long));
+  .then(data => initMapbox(data.results, lat, long)); // Display user location on Mapbox
 }
 
 export { callPlacesAPI, displayNearbyStores };
