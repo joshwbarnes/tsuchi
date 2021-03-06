@@ -5,6 +5,7 @@ class Item < ApplicationRecord
   validates :name, presence: true
   validates :item_category, presence: true
 
+  attribute :notification, :boolean, default: true
   CATEGORIES = [
   'book_store',
   'clothing_store',
