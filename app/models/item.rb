@@ -4,4 +4,15 @@ class Item < ApplicationRecord
 
   validates :name, presence: true
   validates :item_category, presence: true
+
+  CATEGORIES = [
+  'book_store',
+  'clothing_store',
+  'convenience_store',
+  'dentist',
+  'plumber',
+  'shopping_mall',
+  'liquor_store',
+  'museum'
+]
 end
