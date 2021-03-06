@@ -3,6 +3,8 @@ class ListsController < ApplicationController
 
   def show
     @lists = current_user.lists.order(:id)
+    @new_buddy = params[:buddy]
+    @user_list = UserList.new
      #authorize @list
     if params[:list_id]
       @items = Item.where(list_id: params[:list_id]).order(created_at: :desc)
