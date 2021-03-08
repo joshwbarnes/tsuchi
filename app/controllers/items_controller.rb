@@ -49,7 +49,6 @@ class ItemsController < ApplicationController
   end
 
   def update_notification
-
     set_item
     if @item.notification
      @item.update_attributes(notification: false)

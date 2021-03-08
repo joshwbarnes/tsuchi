@@ -16,4 +16,5 @@ end
   # resources :items, only: [:show]
 
   get '/places', to: 'places#call'
+
 end

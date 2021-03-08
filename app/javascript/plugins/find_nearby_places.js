@@ -4,7 +4,7 @@ import { initMapbox } from './init_mapbox';
 
 // Display names of nearby stores
 // to the view
-const displayNearbyStores = (results) => {
+const displayNearbyStores = (results, lat, long) => {
   let icon;
   let storeNames = results.map((result) => {
     let openIcon = '<i class="fas fa-eye"></i>';
@@ -16,7 +16,8 @@ const displayNearbyStores = (results) => {
   // Display store name in HTML DOM
   const storeNameContainer = document.querySelector('.nearby-stores');
   storeNames.slice(-4).forEach((name) => {
-    let element = `<p class="store-name">${name}</p>`;
+
+    let element = `<a href="https://www.google.com/maps/dir/${lat},${long}/${name}/" target="_blank" class="store-name">${name}</a>`;
     storeNameContainer.insertAdjacentHTML('afterbegin', element + icon);
   });
 }
