@@ -1,10 +1,10 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
-  
+
   def show
     @nearby = params[:nearby]
   end
-  
+
   def create
     @item = Item.new(item_params)
     @list = List.find(params[:list_id])
@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
       render 'lists/show'
     end
   end
-  
+
   def edit; end
 
   def update
@@ -41,17 +41,17 @@ class ItemsController < ApplicationController
     @item.destroy
     redirect_to list_path(set_list,list_id: params[:list_id]), notice: 'Deleted!'
   end
-  
+
   private
-  
+
   def set_item
     @item = Item.find(params[:id])
   end
-  
+
   def set_list
     List.find(params[:list_id])
   end
-  
+
   def item_params
     params.require(:item).permit(:name, :item_category, :quantity, :completed, :notification)
   end

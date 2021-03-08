@@ -46,7 +46,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   .back {
     color: $stroke;
     position: absolute;
@@ -70,7 +70,9 @@
 .store-name {
   @include std-box-shadow;
   padding: 32px;
+  display: block;
   border-radius: 16px;
+  color: inherit;
 }
 
 .container-item-edit-actions {
