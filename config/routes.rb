@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
  resources :lists, except: [:index] do
   resources :items, only: [:create, :destroy, :edit, :update]
+  resources :user_lists, only: [:create]
   end
 
   resources :items, only: [:show]

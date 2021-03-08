@@ -1,16 +1,10 @@
-<%= simple_form_for [@list, @item] do |f| %>
+<%= simple_form_for [@list, item] do |f| %>
   <%= f.input :name %>
-  <%= f.input :item_category %>
-  <%= f.input :quantity %>
-  <%= f.input :completed %>
-  <%= f.input :notification %>
+  <%#= f.input :item_category, as: :select, collection: item_category, prompt: 'Select category', label: false %>
+  <%= f.input :item_category, collection: Item::CATEGORIES, prompt: "Choose your category" %>
+  <%= f.input :quantity, collection: 1..20, prompt: "How many?" %>
   <input type="hidden" name="optional" value="<%= optional %>">
   <%= f.submit %>
 <% end %>
 
-<%#= simple_form_for [@list, @item] do |f| %>
-  <%#= f.input :name, label %>
-  <%#= f.input :content, label: "How was your monster?"%>
-  <%#= link_to 'Cancel', root_path, class: 'text-danger mr-2' %>
-  <%#= f.submit "Confirm", class: 'btn btn-success' %>
-  <%# end %>
+
