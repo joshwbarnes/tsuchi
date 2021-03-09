@@ -15,4 +15,4 @@ document.addEventListener('turbolinks:load', () => {
   init_flatpickr();
 });
 
-require("list/butons")
+

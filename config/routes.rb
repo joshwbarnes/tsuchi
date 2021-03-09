@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/update'
   get 'pages/index'
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
  resources :lists, except: [:index] do
   resources :items, only: [:create, :destroy, :edit, :update]
   resources :user_lists, only: [:create]
+
   end
   resources :items, only: [:show] do
     member do
@@ -16,5 +18,6 @@ end
   # resources :items, only: [:show]
 
   get '/places', to: 'places#call'
-
+  get '/dashboard', to: 'pages#dashboard', as: :dashboard
+resources :users, only: [:update]
 end

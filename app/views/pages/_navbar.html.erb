@@ -1,0 +1,12 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+   <%= link_to "Your lists", list_path(current_user.lists.first),class: "dropdown-item" %>
+
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+  </div>
+</div>
+</div>
