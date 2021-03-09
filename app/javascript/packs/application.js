@@ -13,22 +13,14 @@ import { init_flatpickr } from '../plugins/init_flatpickr';
 document.addEventListener('turbolinks:load', () => {
   getLocation();
   init_flatpickr();
-
-  window.addEventListener("load", () => {
+  
+  let ping = document.querySelector("#pingers");
+  ping.addEventListener("click", () => {
     Notification.requestPermission()
     .then((result) => {
-      console.log(result);
+      var img = 'https://picsum.photos/50';
+      var text = 'Check out this notification!';
+      var notification = new Notification('Notification', { body: text, icon: img });
     });
-  });
-
-  // Notification.permission - default, granted, denied
-
-  // Placeholder icon:
-  // https://picsum.photos/50
-
-
-  var img = 'https://picsum.photos/50';
-  var text = 'Check out this notification!';
-  var notification = new Notification('Notification', { body: text, icon: img });
   });
 });
