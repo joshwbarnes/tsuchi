@@ -13,6 +13,22 @@ import { init_flatpickr } from '../plugins/init_flatpickr';
 document.addEventListener('turbolinks:load', () => {
   getLocation();
   init_flatpickr();
-});
 
-require("list/butons")
+  window.addEventListener("load", () => {
+    Notification.requestPermission()
+    .then((result) => {
+      console.log(result);
+    });
+  });
+
+  // Notification.permission - default, granted, denied
+
+  // Placeholder icon:
+  // https://picsum.photos/50
+
+
+  var img = 'https://picsum.photos/50';
+  var text = 'Check out this notification!';
+  var notification = new Notification('Notification', { body: text, icon: img });
+  });
+});
