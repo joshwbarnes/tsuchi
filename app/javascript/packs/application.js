@@ -13,4 +13,25 @@ import { init_flatpickr } from '../plugins/init_flatpickr';
 document.addEventListener('turbolinks:load', () => {
   getLocation();
   init_flatpickr();
+<<<<<<< HEAD
+=======
+
+  window.addEventListener("load", () => {
+    Notification.requestPermission()
+    .then((result) => {
+      console.log(result);
+    });
+  });
+
+  // Notification.permission - default, granted, denied
+
+  // Placeholder icon:
+  // https://picsum.photos/50
+
+
+  var img = 'https://picsum.photos/50';
+  var text = 'Check out this notification!';
+  var notification = new Notification('Notification', { body: text, icon: img });
+  });
+>>>>>>> 481d3e882d0d58fe0348bf50b3b7cd3cf593d51a
 });
