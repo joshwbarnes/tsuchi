@@ -14,5 +14,3 @@ document.addEventListener('turbolinks:load', () => {
   getLocation();
   init_flatpickr();
 });
-
-require("list/butons")
