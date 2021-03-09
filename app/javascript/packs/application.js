@@ -23,18 +23,4 @@ document.addEventListener('turbolinks:load', () => {
       var notification = new Notification('Notification', { body: text, icon: img });
     });
   });
-<<<<<<< HEAD
 });
-=======
-
-  // Notification.permission - default, granted, denied
-
-  // Placeholder icon:
-  // https://picsum.photos/50
-
-
-  var img = 'https://picsum.photos/50';
-  var text = 'Check out this notification!';
-  var notification = new Notification('Notification', { body: text, icon: img });
-  });
->>>>>>> 8d0886264d38b58b874bd8e15a12fa25e5b0bfd1
