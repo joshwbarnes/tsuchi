@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   resources :items, only: [:create, :destroy, :edit, :update]
   resources :user_lists, only: [:create]
   end
-
-  resources :items, only: [:show]
+  resources :items, only: [:show] do
+    member do
+       put :update_notification
+    end
+end
+  # resources :items, only: [:show]
 
   get '/places', to: 'places#call'
 

@@ -6,6 +6,8 @@ class ItemsController < ApplicationController
   end
 
   def create
+    @my_list = List.find(params[:item][:my_list])
+    @other_list = List.find(params[:item][:other_list])
     @item = Item.new(item_params)
     @list = List.find(params[:list_id])
     if params[:optional] != 'true'
@@ -16,10 +18,14 @@ class ItemsController < ApplicationController
     if @item.save
       if params[:optional] == "true"
         redirect_to list_path(@list)
-      else
+      elsif
         redirect_to list_path(@list, list_id: params[:list_id])
+      else
+        redirect_to request.referer
       end
     else
+      @new_form = true
+      @item_new = @item
       @lists = List.all
       @items = Item.where(list_id: params[:list_id])
       render 'lists/show'
@@ -40,6 +46,16 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     redirect_to list_path(set_list,list_id: params[:list_id]), notice: 'Deleted!'
+  end
+
+  def update_notification
+    set_item
+    if @item.notification
+     @item.update_attributes(notification: false)
+    else
+     @item.update_attributes(notification: true)
+    end
+     redirect_to request.referer
   end
 
   private

@@ -9,6 +9,7 @@ class ListsController < ApplicationController
 
      #authorize @list
     if params[:list_id]
+       @other_list = List.find(params[:list_id])
       @items = Item.where(list_id: params[:list_id]).order(created_at: :desc)
     else
       @items = Item.all.order(created_at: :desc)

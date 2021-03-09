@@ -20,10 +20,10 @@
 
     <h2>All your items</h2>
   <% else %>
-  <%= link_to "Back", list_path(params[:id]) %>
+  <%= link_to "Back", list_path(@my_list) %>
   <%= @my_list.due_date %>
         <%= link_to "Update", edit_list_path(@my_list) %>
-        <%= link_to "Share with buddy", list_path(@my_list, list_id: params[:list_id], buddy: true)%>
+        <%= link_to "Share with buddy", list_path(@my_list, list_id: @other_list, buddy: true)%>
         <%= link_to "Delete", list_path(@my_list), method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
 
@@ -32,10 +32,10 @@
   <% end %>
 
   <% if @new_form %>
-    <p><%= render "form_new_item", item: @item_new, optional: !params[:list_id] %></p>
+    <p><%= render "lists/form_new_item", list:@my_list, item: @item_new, optional: !params[:list_id],my_list: @my_list.id, other_list: @other_list.id %></p>
   <% end %>
   <% if @edit_form %>
-    <p><%= render "form_edit_item", item: @item_to_edit %></p>
+    <p><%= render "lists/form_edit_item", item: @item_to_edit %></p>
   <% end %>
   <% @items.each_with_index do |item, index| %>
     <ul>
@@ -45,21 +45,22 @@
         <%= item.quantity %>
 
          <label class="switch">
-
+    <%= link_to update_notification_item_path(item), method: :put do %>
         <% if item.notification == true %>
           <input type="checkbox" checked>
         <% else %>
           <input type="checkbox">
         <% end %>
         <span class="slider round"></span>
+        <% end %>
         </label>
 
-        <%= link_to "Edit", list_path(@list,item_id: item.id, list_id: params[:list_id], edit: true) %>
+        <%= link_to "Edit", list_path(@list,item_id: item.id, list_id: @other_list, edit: true) %>
         <%= link_to "Delete", list_item_path(@list, item), method: :delete, data: { confirm: "Are you sure?" } %>
       </li>
     </ul>
   <% end %>
-  <%= link_to "Add item", list_path(@list, list_id: params[:list_id], new: true) %>
+  <%= link_to "Add item", list_path(@list, list_id: @other_list, new: true) %>
 
 
 
