@@ -15,19 +15,20 @@ document.addEventListener('turbolinks:load', () => {
   init_flatpickr();
 
   window.addEventListener("load", () => {
-  Notification.requestPermission()
-  .then((result) => {
-    console.log(result);
+    Notification.requestPermission()
+    .then((result) => {
+      console.log(result);
+    });
   });
-});
 
-// Notification.permission - default, granted, denied
+  // Notification.permission - default, granted, denied
 
-// Placeholder icon:
-// https://picsum.photos/50
+  // Placeholder icon:
+  // https://picsum.photos/50
 
 
-var img = 'https://picsum.photos/50';
-var text = 'Check out this notification!';
-var notification = new Notification('Notification', { body: text, icon: img });
+  var img = 'https://picsum.photos/50';
+  var text = 'Check out this notification!';
+  var notification = new Notification('Notification', { body: text, icon: img });
+  });
 });

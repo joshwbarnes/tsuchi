@@ -3,7 +3,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { displayNearbyStores } from './find_nearby_places';
 
 
-// eslint-disable-next-line import/no-webpack-loader-syntax 
+// eslint-disable-next-line import/no-webpack-loader-syntax
 mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 // results is an array
@@ -29,7 +29,7 @@ const initMapbox = (results, lat, long) => {
     .setLngLat([long, lat])
     .addTo(map)
   }
-  displayNearbyStores(results);
+  displayNearbyStores(results, lat, long);
 };
 
 export { initMapbox };
