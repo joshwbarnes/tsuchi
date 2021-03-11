@@ -1,0 +1,68 @@
+body {
+  height: 50%;
+  background: white;
+  font-family: Boing;
+  min-height: 80vh;
+  overflow-x: hidden;
+  z-index: 1;
+  position: relative;
+}
+
+h1 {
+  margin: 10px 5px 10px 24px;
+  font-family: Boing;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: #393939
+}
+
+p {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  margin: 10px 5px 10px 24px;
+  font-family: Boing;
+}
+
+.about-card {
+  border-radius: 25px;
+  width: 700px;
+  min-width: 300px;
+  margin-bottom: 24px;
+  font-size: 36px;
+  line-height: 40px;
+  font-family: Boing;
+  font-weight: 500;
+  max-width: 1380px;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  background: rgb(250, 248, 247);
+  padding-bottom: 20px;
+}
+
+img {
+  width: 500;
+  height: 500;
+  justify-content: centre;
+}
+
+.btn-block {
+ background: rgb(250, 248, 247);
+ border-radius: 25px;
+ width: 700px;
+ align-items: center;
+ padding-bottom: 20px;
+ justify-content: centre;
+}
+
+.btn-about {
+  background-color: rgb(250, 248, 247);
+  color: black;
+  border: 2px solid black;
+  padding: 8px;
+  border-radius: 25px;
+  margin: 80px;
+}

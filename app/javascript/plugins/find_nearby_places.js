@@ -15,14 +15,8 @@ const displayNearbyStores = (results, lat, long) => {
   // Display store name in HTML DOM
   const storeNameContainer = document.querySelector('.nearby-stores');
   storeNames.slice(-4).forEach((name) => {
-<<<<<<< HEAD
     let element = `<p class="store-name"><span class="open-icon">${icon}</span> ${name}</p>`;
     storeNameContainer.insertAdjacentHTML('afterbegin', element);
-=======
-
-    let element = `<a href="https://www.google.com/maps/dir/${lat},${long}/${name}/" target="_blank" class="store-name">${name}</a>`;
-    storeNameContainer.insertAdjacentHTML('afterbegin', element + icon);
->>>>>>> master
   });
 }
 
