@@ -6,6 +6,7 @@ import { callPlacesAPI } from './find_nearby_places';
 import { initMap } from './init_google_maps';
 
 function success(pos) {
+  console.log('success ' + pos);
   var crd = pos.coords;
   let lat = crd.latitude;
   let long = crd.longitude;
@@ -20,14 +21,15 @@ function success(pos) {
 }
 
 function error(err) {
-  console.warn('ya buggered up');
+  console.log('err');
 }
 
 function getLocation() {
   var options = {
     enableHighAccuracy: true,
   }
-  let id = navigator.geolocation.getCurrentPosition(success, error, options);
+  console.log('getlocation');
+  navigator.geolocation.getCurrentPosition(success, error);
 }
 
 export { getLocation, success };

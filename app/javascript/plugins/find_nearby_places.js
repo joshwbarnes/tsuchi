@@ -22,14 +22,14 @@ const displayNearbyStores = (results) => {
 }
 
 // Call places controller
-// which then calls the Google PLaces API
+// which then calls the Google Places API
 const callPlacesAPI = (coordinates) => {
   let lat = coordinates.lat;
   let long = coordinates.long;
   let itemCategory = document.querySelector('#item-category').innerText;
   fetch(`/places?category=${itemCategory}&lat=${lat}&long=${long}`)
   .then(response => response.json())
-  .then(data => initMapbox(data.results, lat, long)); // Display user location on Mapbox
+  .then(data => displayNearbyStores(data.results)); // Display user location on Mapbox
 }
 
 export { callPlacesAPI, displayNearbyStores };

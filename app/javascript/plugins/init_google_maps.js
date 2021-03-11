@@ -1,5 +1,9 @@
+import { callPlacesAPI } from './find_nearby_places';
+
+let map;
+
 const initMap = (coordinates) => {
-  const map = new google.maps.Map(document.getElementById("map"), {
+  map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: coordinates.lat, lng: coordinates.long },
     zoom: 18,
   });
@@ -8,6 +12,8 @@ const initMap = (coordinates) => {
     position: { lat: coordinates.lat, lng: coordinates.long },
     map: map,
   });
+
+  callPlacesAPI(coordinates);
 }
 
 export { initMap };
