@@ -14,10 +14,9 @@
   </div>
 
 <%# end %>
-
+<div class="container-item" >
   <% if !params[:list_id] %>
    <%= link_to "New Shopping List", new_list_path %>
-
     <h2>All your items</h2>
   <% else %>
   <%= link_to "Back", list_path(@my_list) %>
@@ -38,9 +37,9 @@
     <p><%= render "lists/form_edit_item", item: @item_to_edit %></p>
   <% end %>
   <% @items.each_with_index do |item, index| %>
-    <ul>
-      <li>
-        <%= link_to "#{item.name}", item_path(item) %>
+    <ul class="items">
+      <li class="card-item">
+        <div style="font-size: 2rem;"><%= link_to "#{item.name}", item_path(item) %></div>
         <%= item.item_category %>
         <%= item.quantity %>
 
@@ -62,5 +61,6 @@
   <% end %>
   <%= link_to "Add item", list_path(@list, list_id: @other_list, new: true) %>
 
+</div>
 
 

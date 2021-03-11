@@ -1,1 +1,27 @@
+body{
+  background-color: #bae8e8;
+}
 
+.container-item{
+  text-align: center;
+  // box-shadow: 0 5px 15px ;
+  padding: 8px 40px;
+  margin: 16px;
+  border-radius: 16px;
+  background-color: #fffffe;
+}
+
+.card-item{
+  background-color: #e3f6f5;
+  color: #2d334a;
+  width: 60%;
+  height: 30%;
+  margin: 24px auto;
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+
+  }
+.items{
+  list-style-type: none;
+}
