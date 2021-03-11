@@ -13,6 +13,11 @@ import { init_flatpickr } from '../plugins/init_flatpickr';
 document.addEventListener('turbolinks:load', () => {
   getLocation();
   init_flatpickr();
+
+});
+
+
+
   
   let ping = document.querySelector("#pingers");
   ping.addEventListener("click", () => {
@@ -24,3 +29,4 @@ document.addEventListener('turbolinks:load', () => {
     });
   });
 });
+
