@@ -1,11 +1,8 @@
 body {
-  margin: 18px;
   height: 50%;
   background: white;
   font-family: Boing;
   min-height: 80vh;
-  padding-top: 72px;
-  padding-right: 40px;
   overflow-x: hidden;
   z-index: 1;
   position: relative;
@@ -29,10 +26,10 @@ p {
 }
 
 .about-card {
-  justify-content: centre;
   border-radius: 25px;
   width: 700px;
   min-width: 300px;
+  margin-bottom: 24px;
   font-size: 36px;
   line-height: 40px;
   font-family: Boing;
