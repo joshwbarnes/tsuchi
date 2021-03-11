@@ -3,8 +3,13 @@ class ListsController < ApplicationController
 
   def show
     @lists = current_user.lists.order(:id)
+    @new_buddy = params[:buddy]
+    @user_list = UserList.new
+    @my_list = List.find(params[:id])
+
      #authorize @list
     if params[:list_id]
+       @other_list = List.find(params[:list_id])
       @items = Item.where(list_id: params[:list_id]).order(created_at: :desc)
     else
       @items = Item.all.order(created_at: :desc)
@@ -28,7 +33,7 @@ class ListsController < ApplicationController
     if @list.save
       @user_list = UserList.new(list_id: @list.id, user_id: current_user.id)
       @user_list.save
-      redirect_to list_path(@list, list_id: params[:list_id])
+      redirect_to list_path(@list, list_id: @list.id)
     else
       render :new
     end
@@ -43,7 +48,7 @@ class ListsController < ApplicationController
     @list = set_list
     #authorize @list
     @list.update(list_params)
-    redirect_to list_path(@list)
+    redirect_to list_path(@list, list_id: @list.id)
   end
 
   def destroy
@@ -55,7 +60,6 @@ class ListsController < ApplicationController
     else
       redirect_to new_list_path
   end
-
 
   end
 
