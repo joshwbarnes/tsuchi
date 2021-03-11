@@ -6,7 +6,6 @@ import { callPlacesAPI } from './find_nearby_places';
 import { initMap } from './init_google_maps';
 
 function success(pos) {
-  console.log('success ' + pos);
   var crd = pos.coords;
   let lat = crd.latitude;
   let long = crd.longitude;
@@ -28,7 +27,6 @@ function getLocation() {
   var options = {
     enableHighAccuracy: true,
   }
-  console.log('getlocation');
   navigator.geolocation.getCurrentPosition(success, error);
 }
 

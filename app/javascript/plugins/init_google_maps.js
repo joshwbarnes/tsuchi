@@ -12,7 +12,6 @@ const initMap = (coordinates) => {
     position: { lat: coordinates.lat, lng: coordinates.long },
     map: map,
   });
-
   callPlacesAPI(coordinates);
 }
 
