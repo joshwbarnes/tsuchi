@@ -1,9 +1,12 @@
 <div class="navbar navbar-expand navbar-light navbar-lewagon d-flex justify-content-center">
   <div class="dropdown">
-  <div  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
-   <!--  <b-avatar variant="info" src="https://placekitten.com/300/300"></b-avatar> -->
-  </div>
+
+  <button data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+<%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+
+  </button>
+
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
    <%= link_to "Your lists", list_path(current_user.lists.first),class: "dropdown-item" %>
 
