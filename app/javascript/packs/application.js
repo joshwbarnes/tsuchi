@@ -10,6 +10,7 @@ require("channels")
 
 import { getLocation } from '../plugins/retrieve_user_location';
 import { init_flatpickr } from '../plugins/init_flatpickr';
+
 document.addEventListener('turbolinks:load', () => {
   getLocation();
   init_flatpickr();

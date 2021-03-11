@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Tsuchi</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,5 +17,11 @@
   <body>
     <%= render 'shared/flashes' %>
     <%= yield %>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+     <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKooZEBWJX8jdiMVDO_Bcguq3BrwPNO8Q&libraries=&v=weekly"
+      async
+    ></script>
   </body>
 </html>
