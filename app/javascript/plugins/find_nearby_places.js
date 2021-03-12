@@ -5,6 +5,9 @@
 // Display names of nearby stores
 // to the view
 const displayNearbyStores = (results, lat, long) => {
+  console.log(results);
+  console.log(lat);
+  console.log(long);
   let icon;
   let storeNames = results.map((result) => {
     let openIcon = '<i class="fas fa-eye text-success"></i>';
@@ -15,7 +18,9 @@ const displayNearbyStores = (results, lat, long) => {
   // Display store name in HTML DOM
   const storeNameContainer = document.querySelector('.nearby-stores');
   storeNames.slice(-4).forEach((name) => {
-    let element = `<p class="store-name"><span class="open-icon">${icon}</span> ${name}</p>`;
+    let element = `<a href="https://www.google.com/maps/dir/${lat},${long}/${name}/" target="_blank" class="store-name"><span class="open-icon">${icon}</span> ${name}</a>`;
+
+    // let element = `<p class="store-name"><span class="open-icon">${icon}</span> ${name}</p>`;
     storeNameContainer.insertAdjacentHTML('afterbegin', element);
   });
 }
@@ -28,7 +33,7 @@ const callPlacesAPI = (coordinates) => {
   let itemCategory = document.querySelector('#item-category').innerText;
   fetch(`/places?category=${itemCategory}&lat=${lat}&long=${long}`)
   .then(response => response.json())
-  .then(data => displayNearbyStores(data.results)); // Display user location on Mapbox
+  .then(data => displayNearbyStores(data.results, lat, long)); // Display user location on Mapbox
 }
 
 export { callPlacesAPI, displayNearbyStores };
