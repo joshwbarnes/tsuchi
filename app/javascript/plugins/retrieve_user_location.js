@@ -27,7 +27,7 @@ function getLocation() {
   var options = {
     enableHighAccuracy: true,
   }
-  navigator.geolocation.getCurrentPosition(success, error);
+  navigator.geolocation.getCurrentPosition(success, error, options);
 }
 
 export { getLocation, success };
