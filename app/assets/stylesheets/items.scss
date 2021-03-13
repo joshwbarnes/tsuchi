@@ -4,24 +4,52 @@ body{
 
 .container-item{
   text-align: center;
-  // box-shadow: 0 5px 15px ;
   padding: 8px 40px;
   margin: 16px;
   border-radius: 16px;
   background-color: #fffffe;
+  position: relative;
 }
+/* 吹き出し本体 */
+// .container-item{
+//   position: relative;
+//   padding: 20px;
+// }
+
+/* beforeで三角を表現 */
+.container-item::before{
+  border: solid transparent;
+    content:'';
+    height:0;
+    width:0;
+    pointer-events:none;
+    position:absolute;
+    border-color: rgba(0, 153, 255, 0);
+    border-top-width:50px;
+    border-bottom-width:50px;
+    border-left-width:19px;
+    border-right-width:19px;
+    margin-left: 30px;
+    border-bottom-color:#fffffe;
+    bottom:100%;
+    left:50px;
+}
+
 
 .card-item{
   background-color: #e3f6f5;
   color: #2d334a;
-  width: 60%;
   height: 30%;
   margin: 24px auto;
   border-radius: 16px;
   padding: 15px;
-  text-align: center;
-
+  display:flex;
+  justify-content: space-between;
   }
 .items{
   list-style-type: none;
+}
+
+.fa-home{
+
 }

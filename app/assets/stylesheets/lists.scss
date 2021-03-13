@@ -1,9 +1,29 @@
 // Place all the styles related to the lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.list-container{
+.row{
   overflow-x: scroll;
   margin-bottom: 100px;
 }
 
+.fa-folder-plus{
+  font-size:6rem;
+  color: #00917c;
+  margin:0;
+}
 
+.fa-bell{
+  font-size:2rem;
+}
+
+.container-list{
+  display: flex;
+}
+
+.fa-home{
+  font-size: 2rem;
+}
+
+.due-date{
+  display: flex;
+}

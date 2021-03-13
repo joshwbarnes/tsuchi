@@ -1,65 +1,90 @@
+<!-- lists -->
 <h1> Your Shopping Lists </h1>
-<div class="list-container">
-  <div class="row">
-    <div class="col d-flex">
-      <% @lists.each do |list| %>
-    <ul>
-     <li id="btn-list" >
-        <span><%= link_to "#{list.name}", list_path(list, list_id: list.id) %></span>
-      </li>
-    </ul>
-    <% end %>
-  </div>
-   </div>
+  <div class="container-list">
+    <div class="add-list">
+      <%= link_to (new_list_path) do %>
+        <i class="fas fa-folder-plus"></i>
+      <% end %>
+    </div>
+    <div class="row">
+        <div class="col d-flex">
+          <% @lists.each do |list| %>
+            <ul>
+              <li id="btn-list" >
+                <span><%= link_to "#{list.name}", list_path(list, list_id: list.id) %></span>
+              </li>
+            </ul>
+          <% end %>
+        </div>
+     </div>
   </div>
 
-<%# end %>
+<!-- action for list -->
+<%= link_to (list_path(@my_list)) do%>
+  <i class="fas fa-home"></i>
+  <% end %>
 <div class="container-item" >
   <% if !params[:list_id] %>
-   <%= link_to "New Shopping List", new_list_path %>
     <h2>All your items</h2>
   <% else %>
-  <%= link_to "Back", list_path(@my_list) %>
-  <%= @my_list.due_date %>
-        <%= link_to "Update", edit_list_path(@my_list) %>
-        <%= link_to "Share with buddy", list_path(@my_list, list_id: @other_list, buddy: true)%>
-        <%= link_to "Delete", list_path(@my_list), method: :delete, data: { confirm: "Are you sure?" } %>
+  <div class="due-date">
+    <h3>Due date: <%= @my_list.due_date %></h3>
+      <%= link_to "Update", edit_list_path(@my_list) %>
+        <i class="fas fa-pen"></i>
+  </div>
+
+      <button><%= link_to "Share with buddy", list_path(@my_list, list_id: @other_list, buddy: true)%>
+      <i class="fas fa-user-friends"></i></button>
+
+      <%= link_to "Delete", list_path(@my_list), method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
 
-<% if @new_buddy %>
+  <% if @new_buddy %>
     <p><%= render "user_lists/form_buddy", list: @my_list %></p>
   <% end %>
 
   <% if @new_form %>
     <p><%= render "lists/form_new_item", list:@my_list, item: @item_new, optional: !params[:list_id],my_list: @my_list.id, other_list: @other_list.id %></p>
   <% end %>
+
   <% if @edit_form %>
     <p><%= render "lists/form_edit_item", item: @item_to_edit %></p>
   <% end %>
+
+  <!-- items -->
   <% @items.each_with_index do |item, index| %>
     <ul class="items">
       <li class="card-item">
-        <div style="font-size: 2rem;"><%= link_to "#{item.name}", item_path(item) %></div>
-        <%= item.item_category %>
-        <%= item.quantity %>
+        <div class="content">
+          <div style="font-size: 2rem;"><%= link_to "#{item.name}", item_path(item) %></div>
+            <%= item.item_category %>
+          </div>
+          <h3>x <%= item.quantity %></h3>
 
-         <label class="switch">
-    <%= link_to update_notification_item_path(item), method: :put do %>
-        <% if item.notification == true %>
-          <input type="checkbox" checked>
-        <% else %>
-          <input type="checkbox">
-        <% end %>
-        <span class="slider round"></span>
-        <% end %>
-        </label>
-
-        <%= link_to "Edit", list_path(@list,item_id: item.id, list_id: @other_list, edit: true) %>
-        <%= link_to "Delete", list_item_path(@list, item), method: :delete, data: { confirm: "Are you sure?" } %>
+          <div>
+            <label class="switch">
+              <%= link_to update_notification_item_path(item), method: :put do %>
+                <% if item.notification == true %>
+                  <input type="checkbox" checked>
+                <% else %>
+                  <input type="checkbox">
+                <% end %>
+                <span class="slider round"></span>
+              <% end %>
+            </label>
+            <i class="fas fa-bell"></i>
+            <%= link_to (list_path(@list,item_id: item.id, list_id: @other_list, edit: true)) do %>
+            <i class="fas fa-pen"></i>
+            <% end %>
+            <%= link_to "Delete", list_item_path(@list, item), method: :delete, data: { confirm: "Are you sure?" } %>
+            <i class="fas fa-trash-alt"></i>
+          </div>
       </li>
     </ul>
   <% end %>
-  <%= link_to "Add item", list_path(@list, list_id: @other_list, new: true) %>
+  <%= link_to (list_path(@list, list_id: @other_list, new: true)) do %>
+  <i class="fas fa-plus-circle"></i>
+  <% end %>
 
 </div>
 
