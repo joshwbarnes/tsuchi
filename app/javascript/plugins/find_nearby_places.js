@@ -16,17 +16,25 @@ const displayNearbyStores = (results, lat, long) => {
   const storeNames = results.map((result) => {
     let openIcon = '<i class="fas fa-eye text-success"></i>';
     let closedIcon = '<i class="fas fa-eye-slash text-danger"></i>';
-    icon = result.opening_hours.open_now ? openIcon : closedIcon;
+    // Checks if the nearby store has opening_hours available 
+    if (result.hasOwnProperty("opening_hours")) {
+      icon = result.opening_hours.open_now ? openIcon : closedIcon;
+    }
     return result.name;
   });
-
+  
   // Display store name in view
   const storeNameContainer = document.querySelector('.nearby-stores');
-  storeNames.slice(-4).forEach((name) => {
-    // Build link to Google Maps with user current location and nearby store name
-    let element = `<a href="https://www.google.com/maps/dir/${lat},${long}/${name}/" target="_blank" class="store-name"><span class="open-icon">${icon}</span> ${name}</a>`;
+  if (results.length > 0) {
+    storeNames.slice(-4).forEach((name) => {
+      // Build link to Google Maps with user current location and nearby store name
+      let element = `<a href="https://www.google.com/maps/dir/${lat},${long}/${name}/" target="_blank" class="store-name"><span class="open-icon">${icon}</span> ${name}</a>`;
+      storeNameContainer.insertAdjacentHTML('afterbegin', element);
+    });
+  } else {
+    let element = '<p class="store-name font-weight-bold">No stores nearby</p>';
     storeNameContainer.insertAdjacentHTML('afterbegin', element);
-  });
+  }
   // Call the GoogleMaps API to display the users location
   // and the nearby stores location on the map
   // with markers
@@ -35,7 +43,7 @@ const displayNearbyStores = (results, lat, long) => {
     long: long
   }
   initMap(userLocation, storeLocations)
-}
+};
 
 // Call places controller within controllers/places_controller.rb
 // which then calls the Google Places API
@@ -47,9 +55,13 @@ const callPlacesAPI = (coordinates) => {
   let lat = coordinates.lat;
   let long = coordinates.long;
   let itemCategory = document.querySelector('#item-category').innerText;
-  fetch(`/places?category=${itemCategory}&lat=${lat}&long=${long}`)
-  .then(response => response.json())
-  .then(data => displayNearbyStores(data.results, lat, long));
+  if (itemCategory == null) {
+    alert('Something went wrong');
+  } else {
+    fetch(`/places?category=${itemCategory}&lat=${lat}&long=${long}`)
+    .then(response => response.json())
+    .then(data => displayNearbyStores(data.results, lat, long));
+  }
 }
 
 export { callPlacesAPI, displayNearbyStores };
