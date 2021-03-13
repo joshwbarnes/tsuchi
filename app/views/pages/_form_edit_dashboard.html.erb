@@ -4,5 +4,6 @@
   <%= f.input :email,input_html: {value: f.object.email} %>
   <%= f.input :mobile_number,input_html: {value: f.object.mobile_number} %>
   <%= f.input :address,input_html: {value: f.object.address} %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit "Edit"%>
 <% end %>
