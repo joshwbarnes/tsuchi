@@ -5,6 +5,6 @@ class UsersController < ApplicationController
 redirect_to request.referer
   end
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :mobile_number, :address)
+    params.require(:user).permit(:first_name, :last_name, :email, :mobile_number, :address, :photo)
   end
 end
