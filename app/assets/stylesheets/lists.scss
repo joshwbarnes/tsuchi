@@ -1,15 +1,27 @@
 // Place all the styles related to the lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.row{
-  overflow-x: scroll;
-  margin-bottom: 100px;
+.main-page{
+  padding:9px;
+}
+.list{
+  margin: 0;
+  padding: 0% 2%;
 }
 
-.fa-folder-plus{
-  font-size:6rem;
+.list-name{
+  font-size:13px;
+}
+.row{
+  overflow-x: scroll;
+  margin-bottom: 10px;
+}
+
+.fa-plus{
+  font-size: 30px;
   color: #00917c;
   margin:0;
+  margin-right: 17px;
 }
 
 .fa-bell{
@@ -18,6 +30,7 @@
 
 .container-list{
   display: flex;
+  align-items: center;
 }
 
 .fa-home{
@@ -26,4 +39,10 @@
 
 .due-date{
   display: flex;
+}
+
+.list-link{
+  &.active{
+    background-color: #f48b29 !important;
+  }
 }

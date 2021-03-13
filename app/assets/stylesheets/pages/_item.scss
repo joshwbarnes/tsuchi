@@ -10,10 +10,13 @@
   flex-direction: column;
   height: 50vh;
   @include std-box-shadow;
-  padding: 8px 40px;
   margin: 16px;
   border-radius: 16px;
   background-color: $background;
+  padding: 3px;
+}
+.items{
+  padding:1px;
 }
 
 #item-name {
@@ -88,3 +91,4 @@
     padding: 0 16px;
   }
 }
+
