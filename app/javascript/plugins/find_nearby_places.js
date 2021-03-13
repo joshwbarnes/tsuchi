@@ -1,16 +1,25 @@
+import { initMap } from './init_google_maps';
+
 // Display names of nearby stores
 // to the view
 const displayNearbyStores = (results, lat, long) => {
+  // Save nearby store locations to storeLocations
+  // This will hold an array with hash values of the lat and long
+  // retrieved via: storeLocations.lat or storeLocations.lng
+  const storeLocations = results.map((result) => {
+    return result.geometry.location;
+  });
   // Check if nearby store is open
   // The resulting true/false determines if the icon
   // next to the store name shows as open (green) or closed (red)
   let icon;
-  let storeNames = results.map((result) => {
+  const storeNames = results.map((result) => {
     let openIcon = '<i class="fas fa-eye text-success"></i>';
     let closedIcon = '<i class="fas fa-eye-slash text-danger"></i>';
     icon = result.opening_hours.open_now ? openIcon : closedIcon;
     return result.name;
   });
+
   // Display store name in view
   const storeNameContainer = document.querySelector('.nearby-stores');
   storeNames.slice(-4).forEach((name) => {
@@ -18,6 +27,14 @@ const displayNearbyStores = (results, lat, long) => {
     let element = `<a href="https://www.google.com/maps/dir/${lat},${long}/${name}/" target="_blank" class="store-name"><span class="open-icon">${icon}</span> ${name}</a>`;
     storeNameContainer.insertAdjacentHTML('afterbegin', element);
   });
+  // Call the GoogleMaps API to display the users location
+  // and the nearby stores location on the map
+  // with markers
+  const userLocation = {
+    lat: lat,
+    long: long
+  }
+  initMap(userLocation, storeLocations)
 }
 
 // Call places controller within controllers/places_controller.rb
