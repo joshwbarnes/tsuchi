@@ -24,6 +24,32 @@ const initMap = (userLocation, storeLocations) => {
     center: { lat: userLocation.lat, lng: userLocation.long },
     zoom: 18,
   });
+  
+  // Define which styles to hide from the map
+  const styles = {
+    default: [],
+    hide: [
+      {
+        featureType: "poi.business",
+        stylers: [{ visibility: "off" }],
+      },
+      {
+        featureType: "poi.medical",
+        stylers: [{ visibility: "off" }],
+      },
+      {
+        featureType: "transit",
+        elementType: "labels.icon",
+        stylers: [{ visibility: "off" }],
+      },
+    ],
+  };
+  
+  // Apply the style options to the map
+  map.setOptions({
+    styles: styles["hide"]
+  });
+
   // Get image of the user
   const userAvatar = { 
     url: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1601093115/bcenayp6675hooifnlij.jpg',
