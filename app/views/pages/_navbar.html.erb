@@ -1,18 +1,22 @@
-<div class="navbar navbar-expand navbar-light navbar-lewagon d-flex justify-content-between">
-<div>
-  <% if @user.photo.attached? %>
-  <%= cl_image_tag @user.photo.key, class: "avatar-large", alt: "avatar-large" %>
-  <% else  %>
-  <%= image_tag 'https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png', width: 150, height: 150 %>
-  <% end %>
-</div>
+<div class="navbar navbar-expand navbar-light navbar-lewagon d-flex justify-content-center">
+  <div class="dropdown">
 
-  <div class="list-unstyled" >
-   <li> <%= link_to "Your lists", list_path(current_user.lists.first) %></li>
-   <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+  <button data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+<%= cl_image_tag("IMAGE_WITH_FACE_ID",
+      width: 150, height: 150, crop: :thumb, gravity: :face), class: "avatar-large", alt: "avatar-large" %>
+
+  </button>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+   <%= link_to "Your lists", list_path(current_user.lists.first),class: "dropdown-item" %>
+
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
   </div>
 </div>
+</div>
 
 
 
-
+style="background-image: url('<%= cl_image_path monster.photo.key, height: 300, width: 400, crop: :fit %>')">
+        <!-- End of Card -->
