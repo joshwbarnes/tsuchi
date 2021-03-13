@@ -25,7 +25,7 @@
     <%= yield %>
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-     <script
+     <script data-turbolinks-eval="false"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKooZEBWJX8jdiMVDO_Bcguq3BrwPNO8Q&libraries=&v=weekly"
       async
     ></script>

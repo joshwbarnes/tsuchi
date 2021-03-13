@@ -24,10 +24,13 @@ function error(err) {
 }
 
 function getLocation() {
-  var options = {
-    enableHighAccuracy: true,
+  const map = document.querySelector("#map");
+  if (map) {
+    var options = {
+      enableHighAccuracy: true,
+    }
+    navigator.geolocation.getCurrentPosition(success, error, options);
   }
-  navigator.geolocation.getCurrentPosition(success, error, options);
 }
 
 export { getLocation, success };
