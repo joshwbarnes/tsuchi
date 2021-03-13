@@ -16,7 +16,7 @@ function success(pos) {
   // Coordinates is an object
   // access lat & long by calling coordinates.lat and
   // coordinates.long  *** callPlacesAPI(coordinates);
-  initMap(coordinates);
+  callPlacesAPI(coordinates);
 }
 
 function error(err) {
