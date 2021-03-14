@@ -9,5 +9,4 @@ class PlacesController < ApplicationController
     response = RestClient.get(url)
     render json: response.body
   end
-
 end
