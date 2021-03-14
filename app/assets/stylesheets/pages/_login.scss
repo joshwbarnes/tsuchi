@@ -1,12 +1,4 @@
-// Place all the styles related to the lists controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-.list-container {
-  overflow-x: scroll;
-  margin-bottom: 100px;
-}
-
-#container-add-list {
+.container-login {
   text-align: center;
   -webkit-box-align: center;
   align-items: center;
@@ -18,7 +10,7 @@
   padding: 20px 80px;
   padding-bottom: 20px;
   margin: 50px;
-  margin-top: 80px;
+  margin-top: 200px;
   margin-bottom: 24px;
   margin-left: 140px;
   margin-right: 140px;
@@ -26,8 +18,3 @@
   height: 30%;
   line-height: 40px;
 }
-
-
-
-
-
