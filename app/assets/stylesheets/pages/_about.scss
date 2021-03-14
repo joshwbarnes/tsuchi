@@ -21,45 +21,42 @@ p {
 }
 
 .about-card {
-  border-radius: 25px;
-  width: 700px;
-  min-width: 300px;
-  margin-bottom: 24px;
-  font-size: 36px;
   line-height: 40px;
+  font-size: 36px;
   font-family: Boing;
   font-weight: 500;
-  max-width: 1380px;
   -webkit-box-align: center;
   align-items: center;
   margin-bottom: 0px;
   margin-top: 80px;
+  border-radius: 25px;
+  width: 800px;
+  margin-left: 0px;
+  margin-right: 12px;
   background: rgb(250, 248, 247);
-  padding-bottom: 20px;
+  padding: 36px;
 }
 
 img {
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 500;
-  height: 500;
   justify-content: centre;
+  flex-shrink: 1;
+  -webkit-box-flex: 3;
+  flex-grow: 3;
+  width: 140%;
 }
 
 .btn-block {
- background: rgb(250, 248, 247);
- border-radius: 25px;
- width: 700px;
- align-items: center;
- padding-bottom: 20px;
- justify-content: centre;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .btn-about {
-  background-color: rgb(250, 248, 247);
+  flex-shrink: 1;
+  margin-top: 8px;
   color: black;
-  border: 2px solid black;
-  padding: 8px;
-  border-radius: 25px;
-  margin: 80px;
+  font-family: Boing;
+  font-size: 32px;
+  line-height: 24px;
 }
