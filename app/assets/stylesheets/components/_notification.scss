@@ -1,0 +1,56 @@
+.notifiation-bell {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 130px;
+  top: 0;
+  right: 0;
+  margin: 32px;
+  padding: 24px;
+  font-size: 2rem;
+  font-weight: bold;
+
+  .notification-count {
+    border-radius: 50%;
+    color: white;
+    background-color: red;
+    padding: 16px;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 16px;
+    text-align: center;
+  }
+}
+
+.notification-modal {
+  position: fixed;
+  width: 30%;
+  height: 150px;
+  top: 0;
+  right: -400px;
+  margin: 32px;
+  padding: 24px;
+  border-radius: 8px;
+  background-color: $stroke;
+  color: $main;
+  transition: 1s;
+  overflow: hidden;
+
+  .notification-heading {
+    font-size: 2.5rem;
+  }
+
+  .notification-body {
+    font-size: 1.5rem;
+  }
+
+  .notification-close {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 16px;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+}
