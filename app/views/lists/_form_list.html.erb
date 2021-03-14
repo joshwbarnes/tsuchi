@@ -1,8 +1,12 @@
-
-<%= simple_form_for list do |f| %>
-  <%= f.input :name, label: 'Name' %>
-  <div id='due_date'><%= f.input :due_date, label: 'Due Date',as: :string, type: :text %></div>
-  <%= f.submit "Confirm" %>
-
-<% end %>
+<div class="container" id="container-add-list">
+    <h1>➕ Add new list</h1>
+    <%= simple_form_for list do |f| %>
+    <%= f.input :name, label: 'List name' %>
+    <div id='due_date'><%= f.input :due_date, label: '🗓',as: :string, type: :text %></div>
+    <%= f.submit "Create", class: "btn btn-primary" %>
+    <% end %>
+  <p>
+   <a href="/lists/1">⬅️</a>
+  </p>
+</div>
 
