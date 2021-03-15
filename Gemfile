@@ -27,8 +27,6 @@ gem 'faker'
 
 gem 'rest-client'
 
-gem 'dotenv-rails'
-
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'simple_form'
