@@ -4,7 +4,7 @@
  <div class="container-list">
     <div class="add-list">
       <%= link_to (new_list_path) do %>
-        <i class="fas fa-folder-plus"></i>
+        <i class="fas fa-plus"></i>
       <% end %>
     </div>
     <div class="row w-100">
@@ -37,7 +37,9 @@
         <% end %> -->
   </div>
 
-      <button class="btn-share-buddy"><div><i class="fas fa-user-friends"></i></div><%= link_to "Share with buddy", list_path(@my_list, list_id: @other_list, buddy: true)%>
+      <button class="btn-share-buddy">
+        <div><i class="fas fa-user-friends"></i></div>
+        <%= link_to "Share", list_path(@my_list, list_id: @other_list, buddy: true), class: "text-dark" %>
       </button>
 
 
@@ -80,12 +82,12 @@
                 <span class="slider round"></span>
               <% end %>
             </label>
-            <!-- <i class="fas fa-bell"></i>
-            <%= link_to (list_path(@list,item_id: item.id, list_id: @other_list, edit: true)) do %>
+            <i class="fas fa-bell"></i>
+            <!-- <%= link_to (list_path(@list,item_id: item.id, list_id: @other_list, edit: true)) do %>
             <i class="fas fa-pen"></i>
             <% end %>
             <%= link_to list_item_path(@list, item), method: :delete, data: { confirm: "Are you sure?" } do%>
-            <i class="fas f -->a-trash-alt"></i>
+            <i class="fas fa-trash-alt"></i>-->
             <% end %>
           </div>
       </li>
