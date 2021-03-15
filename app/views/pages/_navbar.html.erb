@@ -8,8 +8,8 @@
 </div>
 
   <div class="list-unstyled" >
-   <li> <%= link_to "Your lists", list_path(current_user.lists.first) %></li>
-   <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+   <li> <%= link_to "Your lists", list_path(current_user.lists.first), class: "text-dark" %></li>
+   <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "text-dark" %></li>
   </div>
 </div>
 
