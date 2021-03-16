@@ -9,15 +9,28 @@
 
 .container-logo {
   @include flex-center-x-and-y;
-  height: 45%;
+  height: 415%;
 }
 
 .container-login {
   @include flex-center-x-and-y;
   flex-direction: column;
-  height: 55%;
+  height: 300px;
   // Z-index require to keep on top of wave background
   z-index: 1;
+
+  .login-input {
+    height: 60px;
+    width: 300px;
+    font-size: 1.5rem;
+    text-align: left;
+    margin: 16px 0;
+    outline: none;
+    border-radius: 16px;
+    @include std-box-shadow;
+    border: none;
+    padding-left: 32px;
+  }
 }
 
 .container-form {
