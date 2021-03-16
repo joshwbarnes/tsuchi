@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   background-color: $tertiary;
+  width: 330px;
+  margin: 20px;
 }
 
 #container-item {
@@ -13,7 +15,7 @@
   margin: 16px;
   border-radius: 16px;
   background-color: $background;
-  padding: 3px;
+  padding: 10px;
 }
 .items{
   padding:1px;
@@ -23,15 +25,16 @@
   background-color: $secondary;
   color: $paragraph;
   width: 60%;
-  margin: 24px auto;
+  margin: 20px auto;
   border-radius: 16px;
-  padding: 24px;
+  padding: 8px;
   text-align: center;
   font-size: 2.5rem;
 }
 
 #item-category {
   display: none;
+  padding: -1px;
 }
 
 #map {
@@ -66,13 +69,13 @@
 }
 
 .nearby-stores {
-  padding-top: 24px;
-  font-size: 1.5rem;
+  padding-top: 12px;
+  font-size: 1rem;
 }
 
 .store-name {
   @include std-box-shadow;
-  padding: 32px;
+  padding: 24px;
   display: block;
   border-radius: 16px;
   color: inherit;
@@ -85,7 +88,7 @@
 .container-item-edit-actions {
   display: flex;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
 
   i {
     padding: 0 16px;
