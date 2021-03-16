@@ -37,3 +37,11 @@
   @include std-box-shadow;
   margin-left: auto;
 }
+
+.list-link{
+  &.active{
+    background-color: #f5c0c0 !important;
+    height: 65px !important;
+    width: 65px !important;
+  }
+}

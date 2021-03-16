@@ -28,11 +28,13 @@
 
 .fa-bell{
   font-size:2rem;
+  margin-left: 8px;
 }
 
 .container-list{
   display: flex;
   align-items: center;
+  padding-bottom:10px;
 }
 
 .fa-home{
@@ -63,8 +65,4 @@
   display: flex;
 }
 
-.list-link{
-  &.active{
-    background-color: #f48b29 !important;
-  }
-}
+

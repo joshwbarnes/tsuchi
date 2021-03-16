@@ -6,12 +6,12 @@ class UserListsController < ApplicationController
     @email = params[:user_list][:user]
     @user_lists.share(@email)
     if @user_lists.save
-      flash[:notice] = "Invited buddy"
+      flash[:notice] = "Invited buddy🙌"
       redirect_to list_path(@list.id, list_id: @list.id)
     else
       @lists = current_user.lists.order(:id)
       @items = Item.all.order(created_at: :desc)
-      flash[:alert] = "This buddy is not exist"
+      flash[:alert] = "This buddy is not exist😣"
       redirect_to list_path(@list.id, list_id: @list.id)
     end
   end
