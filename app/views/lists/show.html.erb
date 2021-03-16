@@ -20,8 +20,24 @@
      </div>
   </div>
 
+
 <!-- action for list -->
 <%= link_to"All items", list_path(@my_list) %>
+
+
+  <!-- Fake Notification -->
+  <div class="notifiation-bell">
+    <i class="fas fa-bell text-danger"></i>
+    <span class="notification-count">1</span>
+  </div>
+  <div class="notification-modal">
+    <span><i class="far fa-times-circle notification-close text-danger"></i></span>
+    <h3 class="notification-heading">Item nearby!</h3>
+    <span class="notification-body">Tea is closeby</span>
+  </div>
+  <!-- End of Fake Notification -->
+
+<%# end %>
 
 <div class="container-item" >
   <% if !params[:list_id] %>

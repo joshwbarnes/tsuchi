@@ -12,13 +12,7 @@ body{
   background-color: #fffffe;
   position: relative;
 }
-/* 吹き出し本体 */
-// .container-item{
-//   position: relative;
-//   padding: 20px;
-// }
 
-/* beforeで三角を表現 */
 .container-item::before{
   border: solid transparent;
     content:'';
@@ -46,16 +40,24 @@ body{
   height: 30%;
   margin: 24px auto;
   border-radius: 16px;
+
   padding: 5px;
   display:flex;
   justify-content: space-between;
   }
-// .items{
-//   list-style-type: none;
-// }
 .fa-plus-circle{
 font-size: 30px;
   color: #00917c;
   margin:0;
   margin-right: 17px;
+  padding: 15px;
+  text-align: center;
+  }
+
+.items{
+  list-style-type: none;
+}
+
+.form_dashboard{
+   background-color: #bae8e8;
 }

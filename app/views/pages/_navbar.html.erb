@@ -3,12 +3,8 @@
 
   <button data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-
-  <% if @user.photo.attached?  %>
-  <%= cl_image_tag @user.photo.key, class: "avatar-large", alt: "avatar-large" %>
-  <% else  %>
-  <%= image_tag 'https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png', width: 150, height: 150 %>
-  <% end %>
+<%= cl_image_tag("IMAGE_WITH_FACE_ID",
+      width: 150, height: 150, crop: :thumb, gravity: :face), class: "avatar-large", alt: "avatar-large" %>
 
   </button>
 
@@ -22,3 +18,5 @@
 
 
 
+style="background-image: url('<%= cl_image_path monster.photo.key, height: 300, width: 400, crop: :fit %>')">
+        <!-- End of Card -->

@@ -9,9 +9,11 @@ require("@rails/activestorage").start()
 require("channels")
 
 import { getLocation } from '../plugins/retrieve_user_location';
+import { itemNotification } from '../plugins/notification';
 import { init_flatpickr } from '../plugins/init_flatpickr';
 
 document.addEventListener('turbolinks:load', () => {
   getLocation();
+  itemNotification();
   init_flatpickr();
 });

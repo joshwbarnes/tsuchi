@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  #skip_before_action :authenticate_user!, only: :index
+before_action :authenticate_user!, only: :dashboard
 
   def home
   end
@@ -8,8 +8,6 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
-
   def about
   end
-
 end
