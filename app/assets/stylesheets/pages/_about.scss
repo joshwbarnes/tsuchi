@@ -1,19 +1,21 @@
 body {
-  height: 50%;
   background: white;
   font-family: Boing;
   min-height: 80vh;
   overflow-x: hidden;
-  z-index: 1;
-  position: relative;
+  // z-index: 1;
+  // position: relative;
 }
 
 h1 {
   font-family: Boing;
-  font-size: 32px;
+  font-size: 16px;
   font-weight: bold;
-  text-align: center;
   color: #393939
+}
+
+h2 {
+  text-align: center;
 }
 
 p {
@@ -21,25 +23,24 @@ p {
 }
 
 .about-card {
-  line-height: 40px;
-  font-size: 36px;
+  line-height: 20px;
+  font-size: 16px;
   font-family: Boing;
   font-weight: 500;
-  -webkit-box-align: center;
   align-items: center;
   margin-bottom: 0px;
-  margin-top: 80px;
-  border-radius: 25px;
-  width: 800px;
+  margin-top: 8px;
+  border-radius: 16px;
+  width: 340px;
   margin-left: 0px;
-  margin-right: 12px;
+  margin-right: 5px;
   background: rgb(250, 248, 247);
-  padding: 36px;
+  padding: 10px;
 }
 
 img {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 0px;
+  padding-bottom: 4px;
   justify-content: centre;
   flex-shrink: 1;
   -webkit-box-flex: 3;
@@ -57,6 +58,6 @@ img {
   margin-top: 8px;
   color: black;
   font-family: Boing;
-  font-size: 32px;
+  font-size: 16px;
   line-height: 24px;
 }
