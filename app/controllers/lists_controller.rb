@@ -6,7 +6,8 @@ class ListsController < ApplicationController
     @new_buddy = params[:buddy]
     @user_list = UserList.new
     @my_list = List.find(params[:id])
-
+    @link_list = @lists.filter{ |list| list.id != params[:list_id].to_i}
+    @link_list = @link_list.unshift(@lists.reject{ |list| list.id != params[:list_id].to_i}[0])
      #authorize @list
     if params[:list_id]
        @other_list = List.find(params[:list_id])
