@@ -104,12 +104,12 @@ items_two = [
   'Tofu',
   'Milk',
   'Gyozas',
-  'Spring onions'
+  'Spring onions',
 ]
 
 items_three = [
   'Bugers',
-  'Kebabs'
+  'Kebabs',
   'Stuff for a salad',
   'Prawns',
   'Bread rolls',
@@ -118,7 +118,7 @@ items_three = [
 
 items_four = [
   'Bugers',
-  'Kebabs'
+  'Kebabs',
   'Stuff for a salad',
   'Prawns',
   'Bread rolls',
