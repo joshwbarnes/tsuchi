@@ -1,6 +1,9 @@
 <div class="main-page">
-<!-- lists -->
+  <!-- navbar -->
+  <%#= render "pages/navbar" %>
 
+
+<!-- lists -->
  <div class="container-list">
     <div class="add-list">
       <%= link_to (new_list_path) do %>
@@ -53,7 +56,7 @@
         <% end %> -->
   </div>
 
-      <button class="btn-share-buddy">
+      <button class="btn-share-buddy position-right">
         <div><i class="fas fa-user-friends"></i></div>
         <%= link_to "Share", list_path(@my_list, list_id: @other_list, buddy: true), class: "text-dark" %>
       </button>
@@ -78,7 +81,7 @@
     <ul class="items">
       <li class="card-item">
         <div class="content d-flex align-items-center">
-          <div>
+          <div class="name">
             <div class="mr-4">
             <%= link_to "#{item.name}", item_path(item), class: "text-dark " %></div>
             <a><%= item.item_category %></a>
