@@ -8,8 +8,6 @@ before_action :authenticate_user!, only: :dashboard
     @user = current_user
   end
 
-
   def about
   end
-
 end
