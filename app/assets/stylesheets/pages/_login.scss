@@ -20,13 +20,23 @@
 // }
 
 .container-signup {
-  border-radius: 25px;
-  width: 700px;
+  border-radius: 20px;
+  width: 345px;
   min-width: 300px;
-  max-width: 1380px;
-  margin-top: 75px;
+  max-width: 375px;
+  margin-top: 20px;
   margin-left: 0px;
   margin-right: 0px;
-  padding: 20px 80px;
+  padding: 20px 20px;
   background-color: #fffffe;
+  font-size: 6px;
+}
+
+.container-password {
+  width: 345px;
+  min-width: 300px;
+  max-width: 375px;
+  margin-top: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
