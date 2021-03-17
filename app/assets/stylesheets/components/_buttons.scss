@@ -45,3 +45,17 @@
     width: 65px !important;
   }
 }
+
+.form-actions {
+  width: 100px;
+  font-weight: bold;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin-top: 24px;
+  background-color: $button;
+  color: $button-text;
+  font-weight: bold;
+  @include std-box-shadow;
+}
