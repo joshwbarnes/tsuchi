@@ -12,13 +12,13 @@
   flex-direction: column;
   height: 50vh;
   @include std-box-shadow;
-  margin: 16px;
+  margin: 12px;
   border-radius: 16px;
   background-color: $background;
-  padding: 10px;
+  padding: 0px;
 }
 .items{
-  padding:1px;
+  padding: 0px;
 }
 
 #item-name {
@@ -69,8 +69,9 @@
 }
 
 .nearby-stores {
-  padding-top: 12px;
-  font-size: 1rem;
+  padding: 12px;
+  font-size: 10px;
+  margin: 10px;
 }
 
 .store-name {
@@ -88,10 +89,10 @@
 .container-item-edit-actions {
   display: flex;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 
   i {
-    padding: 0 16px;
+    padding: 0 10px;
   }
 }
 

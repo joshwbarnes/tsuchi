@@ -22,7 +22,7 @@ const initMap = (userLocation, storeLocations) => {
   // Display map on view
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: userLocation.lat, lng: userLocation.long },
-    zoom: 14,
+    zoom: 13,
   });
 
   // Define which styles to hide from the map
@@ -52,7 +52,7 @@ const initMap = (userLocation, storeLocations) => {
 
   // Get image of the user
   const userAvatar = {
-    url: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_50,w_50/v1601093115/bcenayp6675hooifnlij.jpg',
+    url: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,r_max,h_50,w_50/v1601093115/bcenayp6675hooifnlij.jpg',
     // This marker is x pixels wide by x pixels high.
     size: new google.maps.Size(90, 90),
     origin: new google.maps.Point(0, 0),
