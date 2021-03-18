@@ -58,20 +58,23 @@
 
       <button class="btn-share-buddy position-right">
         <div><i class="fas fa-user-friends"></i></div>
-        <%= link_to "Share", list_path(@my_list, list_id: @other_list, buddy: true), class: "text-dark" %>
+
       </button>
 
 
   <% end %>
 
-  <% if @new_buddy %>
-    <p><%= render "user_lists/form_buddy", list: @my_list %></p>
-  <% end %>
+
+    <div class="buddy-form form-hidden"><%= render "user_lists/form_buddy", list: @my_list %></div>
+
 
   <% if @new_form %>
-    <p><%= render "lists/form_new_item", list:@my_list, item: @item_new, optional: !params[:list_id],my_list: @my_list.id, other_list: @other_list.id %></p>
+    <% if @items_with_list %>
+      <p><%= render "lists/form_new_item", list:@my_list, item: @item_new, optional: !params[:list_id],my_list: @my_list.id, other_list: @other_list.id %></p>
+      <% else %>
+        <p><%= render "lists/form_new_item", list:@my_list, item: @item_new, optional: !params[:list_id],my_list: @my_list.id %></p>
+    <% end %>
   <% end %>
-
   <% if @edit_form %>
     <p><%= render "lists/form_edit_item", item: @item_to_edit %></p>
   <% end %>
@@ -113,9 +116,19 @@
       </li>
     </ul>
   <% end %>
-  <%= link_to (list_path(@list, list_id: @other_list, new: true)) do %>
-  <i class="fas fa-plus-circle"></i>
+  <% if @items_with_list %>
+    <%= link_to (list_path(@list, list_id: @other_list, new: true)) do %>
+      <i class="fas fa-plus-circle"></i>
+    <% end %>
+  <% else %>
+    <%= link_to (list_path(@list, new: true)) do %>
+      <i class="fas fa-plus-circle"></i>
+    <% end %>
   <% end %>
+</div>
+</div>
 
-</div>
-</div>
+
+
+
+

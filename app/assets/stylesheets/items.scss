@@ -29,9 +29,10 @@ body{
     border-bottom-color:#fffffe;
     bottom:100%;
     left:25px;
-
 }
-
+.container-item--hidden::before {
+  display:none;
+}
 
 .mr-4{
     font-size: 15px;
