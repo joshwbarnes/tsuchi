@@ -1,6 +1,6 @@
-/* 
+/*
 To use:
-Your button in .html file should look like this - 
+Your button in .html file should look like this -
 
   <label class="switch">
     <input type="checkbox">
@@ -50,7 +50,7 @@ Your button in .html file should look like this -
 }
 
 input:checked + .slider {
-  background-color: $stroke;
+  background-color: #28527a;
 }
 
 input:focus + .slider {
