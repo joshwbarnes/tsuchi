@@ -28,6 +28,29 @@
 <%= link_to"All items", list_path(@my_list) %>
 
 
+  <!-- This is the 'burger' icon that will open the menu -->
+  <div class="menu-activate-burger">
+    <i class="fas fa-bars burger-menu"></i>
+  </div>
+  
+  <!-- Side nav/panel to get to dashboard -->
+  <div class="menu-modal">
+    <button class="close-menu">close</button>
+    <div class="profile-picture"></div>
+    <div class="menu-user-info">
+      <span class="menu-user-name">Josh Barnes</span>
+      <span class="menu-user-email">joshbarnes@gmail.com</span>
+    </div>
+    <ul class="menu-items-container">
+      <li class="menu-item">Profile</li>
+      <li class="menu-item">About</li>
+      <li class="menu-item">History</li>
+      <li class="menu-item">Settings</li>
+      <li class="menu-item" id="logout">Logout</li>
+    </ul>
+  </div>
+  <!-- End of nav/side panel -->
+
   <!-- Fake Notification -->
   <%# <div class="notifiation-bell">
     <i class="fas fa-bell text-danger"></i>
@@ -39,6 +62,8 @@
     <span class="notification-body">Tea is closeby</span>
   </div>
   <!-- End of Fake Notification -->
+
+
 
 <%# end %>
 
