@@ -1,13 +1,14 @@
 #btn-login {
   height: 40px;
-  width: 150px;
+  width: 120px;
   border-radius: 8px;
-  font-size: 2rem;
+  font-size: 1.2rem;
   margin-top: 24px;
   background-color: $button;
   color: $button-text;
   font-weight: bold;
   @include std-box-shadow;
+  font-family: $main-text;
 }
 
 #btn-list{

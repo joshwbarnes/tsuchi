@@ -13,11 +13,14 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
   src: font-url('Oliver-Notes.ttf');
 }
 
-
 $title-heading-font: "Oliver Notes";
 $main-text: 'Poppins', sans-serif;
 
-
 html {
   font-size: 10px;
+  font-family: $main-text;
+}
+
+::-webkit-input-placeholder {
+  font-family: $main-text;
 }
