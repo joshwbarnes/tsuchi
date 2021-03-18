@@ -11,7 +11,7 @@ class UserListsController < ApplicationController
     else
       @lists = current_user.lists.order(:id)
       @items = Item.all.order(created_at: :desc)
-      flash[:alert] = "This buddy is not exist😣"
+      flash[:alert] = "This buddy does not exist😣"
       redirect_to list_path(@list.id, list_id: @list.id)
     end
   end

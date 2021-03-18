@@ -14,11 +14,6 @@
   font-size:13px;
 }
 
-.list-container {
-  overflow-x: scroll;
-  margin-bottom: 10px;
-}
-
 .fa-plus{
   font-size: 30px;
   color: #00917c;
@@ -35,6 +30,8 @@
   display: flex;
   align-items: center;
   padding-bottom:10px;
+  overflow-x: scroll;
+  margin-bottom: 10px;
 }
 
 .fa-home{
@@ -60,9 +57,10 @@
   line-height: 40px;
 }
 
-
 .due-date{
   display: flex;
 }
 
-
+.form-hidden{
+  display:none;
+}
