@@ -81,12 +81,13 @@
     <ul class="items">
       <li class="card-item">
         <div class="content d-flex align-items-center">
+          <h4 class="ml-2">x <%= item.quantity %></h4>
           <div class="name">
             <div class="mr-4">
-            <%= link_to "#{item.name}", item_path(item), class: "text-dark " %></div>
-            <a><%= item.item_category %></a>
+            <h3><%= link_to "#{item.name}", item_path(item), class: "text-dark " %></h3></div>
+            <div class="display-none"><%= item.item_category %></div>
             </div>
-            <h3 class="ml-2">x <%= item.quantity %></h3>
+
           </div>
 
 
