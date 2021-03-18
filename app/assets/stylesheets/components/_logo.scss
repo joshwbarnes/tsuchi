@@ -2,9 +2,10 @@
   // Z-index require to keep on top of wave background
   z-index: 1;
   position: absolute;
+  display: none;
   top: 160px;
 
   svg {
-    height: 80px;
+    height: 30px;
   }
 }
