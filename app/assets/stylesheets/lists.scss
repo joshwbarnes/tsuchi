@@ -1,9 +1,68 @@
 // Place all the styles related to the lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.list-container{
+
+.main-page{
+  padding:9px;
+}
+.list{
+  margin: 0;
+  padding: 0% 2%;
+}
+
+.list-name{
+  font-size:13px;
+}
+
+.list-container {
   overflow-x: scroll;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
+}
+
+.fa-plus{
+  font-size: 30px;
+  color: #00917c;
+  margin:0;
+  margin-right: 17px;
+}
+
+.fa-bell{
+  font-size:2rem;
+  margin-left: 8px;
+}
+
+.container-list{
+  display: flex;
+  align-items: center;
+  padding-bottom:10px;
+}
+
+.fa-home{
+  font-size: 2rem;
+}
+#container-add-list {
+  text-align: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 310px;
+  min-width: 200px;
+  max-width: 800px;
+  border: 40px;
+  border-radius: 15px;
+  padding: 16px;
+  padding-bottom: 8px;
+  margin-top: 40px;
+  margin-bottom: 24px;
+  margin-left: 30px;
+  margin-right: 20px;
+  background-color: #fffffe;
+  height: 30%;
+  line-height: 40px;
+}
+
+
+.due-date{
+  display: flex;
 }
 
 

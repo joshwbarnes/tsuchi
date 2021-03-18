@@ -8,24 +8,45 @@
     <%= render 'components/logo' %>
   </div>
 
+  <!-- Earth -->
+  <div class="earth-container">
+  <div class="sphere">
+    <div class="layer">
+      <div class="ambience">
+      </div>
+    </div>
+    <div class="layer">
+      <div class="ocean-glare"></div>
+    </div>
+    <div class="layer land">
+    </div>
+    <div class="layer clouds">
+    </div>
+    <div class="layer darkside">
+    </div>
+    <div class="layer">
+      <div class="edge"></div>
+    </div>
+    <div class="layer">
+      <div class="glare"></div>
+    </div>
+  </div>
+</div>
+<!-- End of Earth -->
+
   <div class="container-heading-main">
     <h1 id="heading-main">Tsuchi</h1>
     <p id="heading-quote">Receive a ping when you forget your thing</p>
   </div>
-
   <div class="container-login">
-
     <%= render 'shared/login' %>
-
     <!--
       Links appear below the login form
       'Sign up' re-directs to users homepage, showing their lists
       'Learn more' scrolls the page down to give information about the app
     -->
-    <div class="container-homepage-links">
-      <p>
-       <a href="/pages/about"><u>Learn about Tsuchi...</u></a>
-      </p>
-    </div>
+   <p>
+    <a href="/pages/about"><b>Learn about Tsuchi → </b></a>
+   </p>
   </div>
 </main>

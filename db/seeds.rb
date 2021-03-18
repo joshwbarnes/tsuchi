@@ -45,34 +45,28 @@ puts "🕊 Created #{user_first_name} #{user_last_name} and given to the Stork t
 # SEED LISTS
 
   list_one = List.create!(
-    name: 'Christmas',
+    name: 'DIY 🔨',
     due_date: Faker::Date.forward(days: 365)
   )
   puts "🍺 Created #{list_one.name}. Let's get organised!"
 
   list_two = List.create!(
-    name: 'Groceries',
+    name: 'Groceries 🥦',
     due_date: Faker::Date.forward(days: 365)
   )
   puts "🍺 Created #{list_two.name}. Let's get organised!"
 
   list_three = List.create!(
-    name: 'Birthday',
+    name: 'BBQ 🍔🌭🥗',
     due_date: Faker::Date.forward(days: 365)
   )
   puts "🍺 Created #{list_three.name}. Let's get organised!"
 
   list_four = List.create!(
-    name: 'DIY',
+    name: 'BBQ 🍔🌭🥗',
     due_date: Faker::Date.forward(days: 365)
   )
   puts "🍺 Created #{list_four.name}. Let's get organised!"
-
-  list_five = List.create!(
-    name: 'Easter',
-    due_date: Faker::Date.forward(days: 365)
-  )
-  puts "🍺 Created #{list_five.name}. Let's get organised!"
 
 # SEED USER_LISTS
 
@@ -96,60 +90,51 @@ UserList.create!(
   list_id: list_four.id
 )
 
-UserList.create!(
-  user_id: user_two.id,
-  list_id: list_five.id
-)
 # SEED ITEMS
 
 items_one = [
-  Faker::House.furniture,
-  Faker::Food.ingredient,
-  Faker::Cannabis.buzzword,
-  Faker::Appliance.equipment
+  'Screws',
+  'Mallet',
+  'Spray paint',
+  'Sandpaper',
 ]
 
 items_two = [
-  'Hammock',
-  'Tent',
-  'Esky',
-  'Fishing Rod',
-  'Sleeping Bag'
+  'Limes',
+  'Tofu',
+  'Milk',
+  'Gyozas',
+  'Spring onions',
 ]
 
 items_three = [
-  'Kaffir Lime Tree',
-  'Gas bottle',
-  'Paint brush',
-  'Ladder',
-  'BBQ'
+  'Bugers',
+  'Kebabs',
+  'Stuff for a salad',
+  'Prawns',
+  'Bread rolls',
+  'Deer Antler'
 ]
 
 items_four = [
-  'The Universe by Lonely Planet',
-  'Taylor Swift Album',
-  'Water Colors',
-  'How to train your border collie - book',
-  'Bongos'
-]
-
-items_five = [
-  'Vacuum',
-  'Water Bottle',
-  'Piglet',
-  'Plant',
-  'Tea'
+  'Bugers',
+  'Kebabs',
+  'Stuff for a salad',
+  'Prawns',
+  'Bread rolls',
+  'Deer Antler'
 ]
 
 item_categories = [
   'book_store',
   'clothing_store',
   'convenience_store',
-  'dentist',
-  'plumber',
   'shopping_mall',
   'liquor_store',
-  'museum'
+  'drugstore',
+  'furniture_store',
+  'post_office',
+  'pet_store',
 ]
 
 ###### List group ONE
@@ -223,22 +208,3 @@ items_four.each do |item|
   )
   puts "🍆 Created #{item} in #{item_category}"
 end
-
-###### List group FIVE
-
-items_five.each do |item|
-  item_category = item_categories[rand(0..item_categories.length - 1)]
-  quantity = rand(1..10)
-
-  Item.create!(
-    name: item,
-    item_category: item_category,
-    quantity: quantity,
-    completed: false,
-    notification: true,
-    list_id: list_five.id,
-    user_id: UserList.find_by(list_id:list_five.id).user.id
-  )
-  puts "🍕 Created #{item} in #{item_category}"
-end
-

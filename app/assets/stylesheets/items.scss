@@ -1,27 +1,62 @@
 body{
   background-color: #bae8e8;
 }
-
+.items{
+  padding:0;
+}
 .container-item{
   text-align: center;
-  // box-shadow: 0 5px 15px ;
-  padding: 8px 40px;
+  padding: 8px 8px;
   margin: 16px;
   border-radius: 16px;
   background-color: #fffffe;
+  position: relative;
 }
+
+.container-item::before{
+  border: solid transparent;
+    content:'';
+    height:0;
+    width:0;
+    pointer-events:none;
+    position:absolute;
+    border-color: rgba(0, 153, 255, 0);
+    border-top-width:50px;
+    border-bottom-width:30px;
+    border-left-width:10px;
+    border-right-width:10px;
+    margin-left: 30px;
+    border-bottom-color:#fffffe;
+    bottom:100%;
+    left:25px;
+
+}
+
+
+.mr-4{
+    font-size: 15px;
+    }
 
 .card-item{
   background-color: #e3f6f5;
   color: #2d334a;
-  width: 60%;
   height: 30%;
   margin: 24px auto;
   border-radius: 16px;
-  padding: 15px;
-  text-align: center;
 
+  padding: 5px;
+  display:flex;
+  justify-content: space-between;
   }
+.fa-plus-circle{
+font-size: 30px;
+  color: #00917c;
+  margin:0;
+  margin-right: 17px;
+
+  text-align: center;
+  }
+
 .items{
   list-style-type: none;
 }
@@ -29,3 +64,21 @@ body{
 .form_dashboard{
    background-color: #bae8e8;
 }
+.position-right{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.name{
+  text-align: left;
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
