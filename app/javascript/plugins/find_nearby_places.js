@@ -26,7 +26,7 @@ const displayNearbyStores = (results, lat, long) => {
   // Display store name in view
   const storeNameContainer = document.querySelector('.nearby-stores');
   if (results.length > 0) {
-    storeNames.slice(-4).forEach((name) => {
+    storeNames.slice(-2).forEach((name) => {
       // Build link to Google Maps with user current location and nearby store name
       let element = `<a href="https://www.google.com/maps/dir/${lat},${long}/${name}/" target="_blank" class="store-name"><span class="open-icon">${icon}</span> ${name}</a>`;
       storeNameContainer.insertAdjacentHTML('afterbegin', element);
