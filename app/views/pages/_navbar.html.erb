@@ -3,20 +3,17 @@
 
   <button data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-<%= cl_image_tag("IMAGE_WITH_FACE_ID",
-      width: 150, height: 150, crop: :thumb, gravity: :face), class: "avatar-large", alt: "avatar-large" %>
+<%= cl_image_tag('https://res.cloudinary.com/ddlypljvb/image/upload/v1616056107/josh_ys2pnm.jpg', width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar-large", alt: "avatar-large") %>
 
   </button>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-   <%= link_to "Your lists", list_path(current_user.lists.first),class: "dropdown-item" %>
 
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+  <div class="list-unstyled" d- >
+   <li> <%= link_to "Your lists", list_path(current_user.lists.first), class: "text-dark" %></li>
+   <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "text-dark" %></li>
   </div>
 </div>
 </div>
 
 
 
-style="background-image: url('<%= cl_image_path monster.photo.key, height: 300, width: 400, crop: :fit %>')">
-        <!-- End of Card -->
