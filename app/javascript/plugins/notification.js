@@ -8,10 +8,10 @@ const itemNotification = () => {
   if (modalDiv) {
     window.addEventListener('load', () => {
       modalDiv.style.transitionDelay = "2s";
-      modalDiv.style.right = "0";
+      modalDiv.style.left = "0";
     });
     close.addEventListener('click', () => {
-      modalDiv.style.right = "-400px";
+      modalDiv.style.left = "-400px";
     });
   };
 };
