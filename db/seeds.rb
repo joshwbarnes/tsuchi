@@ -45,13 +45,13 @@ puts "🚀 Created #{user_first_name} #{user_last_name}."
 # SEED LISTS
 
   list_one = List.create!(
-    name: '🏡 Renos',
+    name: 'Home DIY',
     due_date: Faker::Date.forward(days: 365)
   )
   puts "🚀 Created #{list_one.name}. Let's get shopping!"
 
   list_two = List.create!(
-    name: 'BBQ 🍔',
+    name: 'BBQ',
     due_date: Faker::Date.forward(days: 365)
   )
   puts "🚀 Created #{list_two.name}. Let's get shopping!"
