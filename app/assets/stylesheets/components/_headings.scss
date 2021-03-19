@@ -12,13 +12,16 @@
   letter-spacing: 8px;
   position: absolute;
   top: 32px;
+  text-shadow: 0 5px 15px rgba(255, 216, 3, 0.2);
+  color: $stroke;
 }
 
 #heading-quote {
-  font-size: 2rem;
+  font-size: 1.6rem;
   width: 80%;
-  margin: 16px 0;;
+  margin: 16px 4;
   font-family: $main-text;
   font-weight: 300;
   color: $paragraph;
+  opacity: 0.8;
 }
