@@ -9,6 +9,10 @@ const toggleBodyBlur = (blurValue) => {
   });
 };
 
+// This function holds an event listener which waits for the user 
+// to click on the 'burger menu' icon. 
+// When this happens the side menu slides in from the right and blurs the background
+// elements behind the menu
 const toggleSideMenu = () => {
   const menuModal = document.querySelector('.menu-modal');
   const burgerMenu = document.querySelector('.burger-menu');
@@ -17,7 +21,8 @@ const toggleSideMenu = () => {
     menuModal.style.right = '0';
     toggleBodyBlur(10);
   });
-  
+  // Move the side menu off screen when user clicks
+  // the close button
   const closeMenu = document.querySelector('.close-menu');
   closeMenu.addEventListener('click', () => {
     menuModal.style.right = '-300px';
