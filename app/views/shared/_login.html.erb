@@ -16,7 +16,10 @@
                   class: 'login-input',
                   placeholder: 'Password' } %>
 
-    <%= f.button :submit, "Login", id: 'btn-login', class: 'btn' %>
+    <div class="login-learn-more-container">
+    <%= f.button :submit, "Login", id: 'btn-login', class: 'btn homepage-btn' %>
+    <a href="../pages/about" class="btn homepage-btn" id="btn-learn-more">Learn more</a>
+    </div>
 
     <!-- 
     I've commented out the 'remember me' button 
@@ -30,7 +33,7 @@
 
 <% end %>
 
-<%= render "devise/shared/links" %>
+<!-- render "devise/shared/links" -->
 
 <%# <form action="" class="container-form">
   <input id="email" class="login-input" type="text" placeholder="Email">
