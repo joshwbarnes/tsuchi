@@ -1,12 +1,12 @@
 #btn-login {
-  height: 40px;
-  width: 120px;
+  height: 30px;
+  width: 100px;
   border-radius: 8px;
   font-size: 1.2rem;
-  margin-top: 24px;
+  margin-top: 8px;
   background-color: $button;
   color: $button-text;
-  font-weight: bold;
+  font-weight: normal;
   @include std-box-shadow;
   font-family: $main-text;
 }
