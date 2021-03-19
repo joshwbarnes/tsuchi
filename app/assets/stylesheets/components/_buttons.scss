@@ -1,14 +1,22 @@
-#btn-login {
+.homepage-btn {
   height: 30px;
   width: 100px;
   border-radius: 8px;
   font-size: 1.2rem;
   margin-top: 8px;
-  background-color: $button;
-  color: $button-text;
   font-weight: normal;
   @include std-box-shadow;
   font-family: $main-text;
+}
+
+#btn-login {
+  background-color: $button;
+  color: $button-text;
+}
+
+#btn-learn-more {
+  background-color: $button-text;
+  color: $button;
 }
 
 #btn-list{

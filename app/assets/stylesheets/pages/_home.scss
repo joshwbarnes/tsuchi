@@ -12,6 +12,13 @@
   height: 415%;
 }
 
+.login-learn-more-container {
+  padding-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .container-login {
   @include flex-center-x-and-y;
   flex-direction: column;
