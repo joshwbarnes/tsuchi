@@ -7,7 +7,7 @@ const itemNotification = () => {
   const close = document.querySelector('.notification-close');
   if (modalDiv) {
     window.addEventListener('load', () => {
-      modalDiv.style.transitionDelay = "2s";
+      // modalDiv.style.transitionDelay = "2s";
       modalDiv.style.left = "0";
     });
     close.addEventListener('click', () => {

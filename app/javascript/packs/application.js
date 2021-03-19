@@ -14,8 +14,8 @@ import { init_flatpickr } from '../plugins/init_flatpickr';
 import { toggleSideMenu } from '../plugins/side_menu';
 
 document.addEventListener('turbolinks:load', () => {
-  getLocation();
   itemNotification();
+  getLocation();
   init_flatpickr();
   toggleSideMenu();
 });
