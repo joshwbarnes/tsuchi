@@ -17,6 +17,7 @@ class ListsController < ApplicationController
     end
       @item_new = Item.new
       @new_form = params[:new]
+      @items_with_list = params[:list_id]
     if params[:item_id]
       @item_to_edit = Item.find(params[:item_id])
     end
