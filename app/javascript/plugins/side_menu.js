@@ -16,7 +16,7 @@ const toggleBodyBlur = (blurValue) => {
 const toggleSideMenu = () => {
   const menuModal = document.querySelector('.menu-modal');
   const burgerMenu = document.querySelector('.burger-menu');
-  burgerMenu.addEventListener('click', () => {
+  burgerMenu.addEventListener('click', (event) => {
     menuModal.style.transitionDuration = "0.5s";
     menuModal.style.right = '0';
     toggleBodyBlur(10);
