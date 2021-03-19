@@ -6,11 +6,12 @@
   display: flex;
   flex-direction: column;
   background-color: $background;
+  position: relative;
 }
 
 .container-logo {
   @include flex-center-x-and-y;
-  height: 50%;
+  height: 100%;
 }
 
 .login-learn-more-container {
