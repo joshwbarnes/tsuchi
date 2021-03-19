@@ -14,7 +14,7 @@
 .menu-modal {
   position: fixed;
   top: 0;
-  right: -300px;
+  right: 0px;
   bottom: 0;
   width: 60vw;
   z-index: 3;
@@ -34,7 +34,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border: 2px solid $stroke;
+    border: 1px solid $highlight;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
   }
 
   .menu-user-info {
@@ -75,17 +76,23 @@
 
 .menu-item {
   text-align: end;
-  font-size: 2rem;
+  font-size: 1.9rem;
   padding: 16px;
   font-family: $main-text;
   font-weight: lighter;
   opacity: 0.8;
+  color: $light-gray;
+
+  i {
+    margin-left: 8px;
+  }
 }
 
 .menu-user-name {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .menu-user-email {
   font-weight: lighter;
+  opacity: 0.6;
 }
