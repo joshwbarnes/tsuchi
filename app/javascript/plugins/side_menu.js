@@ -15,13 +15,13 @@ const toggleSideMenu = () => {
     menuModal.style.transitionDuration = "0.5s";
     menuModal.style.right = '0';
     toggleBodyBlur(10);
-});
-
-const closeMenu = document.querySelector('.close-menu');
-closeMenu.addEventListener('click', () => {
-  menuModal.style.right = '-300px';
-  toggleBodyBlur(0);
-});
+  });
+  
+  const closeMenu = document.querySelector('.close-menu');
+  closeMenu.addEventListener('click', () => {
+    menuModal.style.right = '-300px';
+    toggleBodyBlur(0);
+  });
 };
 
 export { toggleSideMenu };
