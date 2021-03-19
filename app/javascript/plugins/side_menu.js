@@ -4,6 +4,7 @@
 const toggleBodyBlur = (blurValue) => {
   const blur = document.querySelectorAll('.notification-modal, .notification-close, .container-item, div > *:not(section, div, button, span)');
   blur.forEach((element) => {
+    element.style.transitionDuration = "0.5s";
     element.style.filter = `blur(${blurValue}px)`;
   });
 };
