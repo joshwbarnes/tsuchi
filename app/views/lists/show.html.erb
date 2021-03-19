@@ -28,6 +28,32 @@
 <%= link_to"All items", list_path(@my_list) %>
 
 
+  <!-- This is the 'burger' icon that will open the menu -->
+  <div class="menu-activate-burger">
+    <i class="fas fa-bars burger-menu"></i>
+  </div>
+  
+  <!-- Side nav/panel to get to dashboard -->
+  <section class="menu-modal">
+    <span><i class="far fa-times-circle close-menu text-danger"></i></span>
+    <div class="profile-picture"></div>
+    <div class="menu-user-info">
+      <span class="menu-user-name">Josh Barnes</span>
+      <span class="menu-user-email">joshbarnes@gmail.com</span>
+    </div>
+    <ul class="menu-items-container">
+      <li class="menu-item">
+        <%= link_to 'Profile', dashboard_path, class: 'menu-item-link' %>
+        <i class="fas fa-user-circle"></i>
+      </li>
+      <li class="menu-item">About <i class="fas fa-info-circle"></i></li>
+      <li class="menu-item">Completed <i class="fas fa-check-circle"></i></li>
+      <li class="menu-item">Settings <i class="fas fa-cog"></i></li>
+      <li class="menu-item" id="logout">Logout <i class="fas fa-sign-out-alt"></i></li>
+    </ul>
+  </section>
+  <!-- End of nav/side panel -->
+
   <!-- Fake Notification -->
   <%# <div class="notifiation-bell">
     <i class="fas fa-bell text-danger"></i>
@@ -36,9 +62,13 @@
   <div class="notification-modal">
     <span><i class="far fa-times-circle notification-close text-danger"></i></span>
     <h3 class="notification-heading">Item nearby!</h3>
-    <span class="notification-body">Burgers are closeby</span>
+
+    <p class="notification-body">Burgers are closeby</p>
+
   </div>
   <!-- End of Fake Notification -->
+
+
 
 <%# end %>
 

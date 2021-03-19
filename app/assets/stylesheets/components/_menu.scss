@@ -1,0 +1,98 @@
+// div > *:not(section, div, button, span) {
+//   filter: blur(10px);
+// }
+
+.close-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 16px;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.menu-modal {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  bottom: 0;
+  width: 60vw;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  color: $tertiary;
+  text-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+  background-color: $stroke;
+
+  .profile-picture {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    align-self: center;
+    margin-top: 32px;
+    background-image: url('https://res.cloudinary.com/ddlypljvb/image/upload/v1616056107/josh_ys2pnm.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid $highlight;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+  }
+
+  .menu-user-info {
+    align-self: center;
+    margin-top: 16px;
+    font-size: 1.2rem;
+    font-family: $main-text;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-items-container {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 24px;
+    bottom: 0;
+  }
+}
+
+#logout {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+// This give the glass-morphism
+// effect on the background of the menu
+// .menu-modal:after {
+//   background-color: rgba(255, 255, 255, 0.3);
+//   backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+//   content: '';
+//   height: 100%;
+//   position: absolute;
+//   width: 100%;
+//   z-index: -1;
+//  }
+
+.menu-item {
+  text-align: end;
+  font-size: 1.9rem;
+  padding: 16px;
+  font-family: $main-text;
+  font-weight: lighter;
+  opacity: 0.8;
+  color: $light-gray;
+
+  i {
+    margin-left: 8px;
+  }
+}
+
+.menu-user-name {
+  font-size: 1.5rem;
+}
+
+.menu-user-email {
+  font-weight: lighter;
+  opacity: 0.6;
+}

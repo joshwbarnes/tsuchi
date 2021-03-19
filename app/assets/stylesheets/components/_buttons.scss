@@ -68,3 +68,10 @@
   font-weight: bold;
   @include std-box-shadow;
 }
+
+.menu-activate-burger {
+  position: absolute;
+  top: 35px;
+  right: 30px;
+  font-size: 3rem;
+}

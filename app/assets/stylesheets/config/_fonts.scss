@@ -24,3 +24,10 @@ html {
 ::-webkit-input-placeholder {
   font-family: $main-text;
 }
+
+.menu-item-link, 
+.menu-item-link:active,
+.menu-item-link:visited {
+  color: inherit;
+  text-decoration: none;
+}

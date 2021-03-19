@@ -11,14 +11,13 @@ require("channels")
 import { getLocation } from '../plugins/retrieve_user_location';
 import { itemNotification } from '../plugins/notification';
 import { init_flatpickr } from '../plugins/init_flatpickr';
+import { toggleSideMenu } from '../plugins/side_menu';
 import { buddyButtonTrigger } from '../plugins/buddy_button';
 
-
-
 document.addEventListener('turbolinks:load', () => {
-  getLocation();
   itemNotification();
+  getLocation();
   init_flatpickr();
+  toggleSideMenu();
   buddyButtonTrigger();
-
 });
