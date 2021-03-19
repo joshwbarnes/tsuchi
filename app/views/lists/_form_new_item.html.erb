@@ -2,7 +2,9 @@
   <%= f.input :name %>
   <%#= f.input :item_category, as: :select, collection: item_category, prompt: 'Select category', label: false %>
   <%= f.hidden_field :my_list, value: my_list %>
-  <%= f.hidden_field :other_list, value: other_list %>
+  <% if @items_with_list %>
+    <%= f.hidden_field :other_list, value: other_list %>
+    <% end %>
   <%= f.input :item_category, collection: Item::CATEGORIES, prompt: "Choose your category" %>
   <%= f.input :quantity, collection: 1..20, prompt: "How many?" %>
   <input type="hidden" name="optional" value="<%= optional %>">

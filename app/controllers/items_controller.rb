@@ -7,7 +7,10 @@ class ItemsController < ApplicationController
 
   def create
     @my_list = List.find(params[:item][:my_list])
-    @other_list = List.find(params[:item][:other_list])
+    if !params[:list_id]
+      @other_list = List.find(params[:item][:other_list])
+    end
+
     @item = Item.new(item_params)
     @list = List.find(params[:list_id])
     if params[:optional] != 'true'
