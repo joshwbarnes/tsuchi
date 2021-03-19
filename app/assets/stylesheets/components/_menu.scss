@@ -2,6 +2,15 @@
 //   filter: blur(10px);
 // }
 
+.close-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 16px;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
 .menu-modal {
   position: fixed;
   top: 0;
