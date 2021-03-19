@@ -29,7 +29,7 @@ const toggleSideMenu = () => {
       menuModal.style.right = '-300px';
       toggleBodyBlur(0);
     });
-  }
+  };
 };
 
 export { toggleSideMenu };
