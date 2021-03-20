@@ -7,11 +7,13 @@
   flex-direction: column;
   background-color: $background;
   position: relative;
+  justify-content: space-between;
 }
 
 .container-logo {
   @include flex-center-x-and-y;
-  height: 100%;
+  height: 50%;
+  margin-bottom: 32px;
 }
 
 .login-learn-more-container {
@@ -24,7 +26,7 @@
 .container-login {
   @include flex-center-x-and-y;
   flex-direction: column;
-  height: 300px;
+  // height: 300px;
   // Z-index require to keep on top of wave background
   z-index: 1;
 
