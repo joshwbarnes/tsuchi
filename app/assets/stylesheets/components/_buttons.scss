@@ -49,6 +49,8 @@
 
 .list-link{
   margin-left: 8px;
+  min-width: 70px;
+
   &.active{
     background-color: #f5c0c0 !important;
     height: 65px !important;
