@@ -1,6 +1,6 @@
 .container-heading-main {
-  @include flex-center-x-and-y;
-  flex-direction: column;
+  display: flex;
+  justify-content: center;
   z-index: 1;
 }
 
