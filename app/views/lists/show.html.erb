@@ -7,21 +7,19 @@
  <div class="container-list">
     <div class="row w-100">
         <div class="col d-flex">
-                   <% @link_list.compact.each do |list| %>
-            <ul class="list">
+          <ul class="list">
+            <% @link_list.compact.each do |list| %>
               <li id="btn-list" class="list-link <%=  'active' if params[:list_id].to_i == list.id %>" >
                 <span><%= link_to "#{list.name}", list_path(list, list_id: list.id), class: "text-dark list-name" %></span>
               </li>
-            </ul>
-          <% end %>
+          </ul>
+            <% end %>
         </div>
      </div>
   </div>
 
-
 <!-- action for list -->
-<%= link_to"All items", list_path(@my_list) %>
-
+<%= link_to"View all items", list_path(@my_list), class: 'btn-all-items' %>
 
   <!-- This is the 'burger' icon that will open the menu -->
   <div class="menu-activate-burger">

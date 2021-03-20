@@ -6,8 +6,8 @@ https://codepen.io/Lunoware/pen/jRBxPN
   left: 150px;
 }
 .sphere{
-  position: relative;
-  margin: 0 auto;
+  // position: relative;
+  // margin: 0 auto;
   display: block;
   height: 300px;
   width: 300px;
@@ -20,7 +20,7 @@ https://codepen.io/Lunoware/pen/jRBxPN
   position: absolute;
   height: 300px;
   width: 300px;
-    border-radius: 150px; 
+  border-radius: 150px; 
   overflow: hidden;
 }
 .ambience{

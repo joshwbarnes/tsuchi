@@ -1,16 +1,23 @@
 // Specific CSS for your home-page
 .container-homepage {
   height: 100vh;
+  width: 100vw;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   background-color: $background;
-  overflow: hidden;
+  position: relative;
+  justify-content: space-between;
+}
+
+.bottom-half {
+  height: 50%;
 }
 
 .container-logo {
   @include flex-center-x-and-y;
-  height: 415%;
+  height: 50%;
+  margin-bottom: 32px;
 }
 
 .login-learn-more-container {
@@ -23,7 +30,7 @@
 .container-login {
   @include flex-center-x-and-y;
   flex-direction: column;
-  height: 300px;
+  // height: 300px;
   // Z-index require to keep on top of wave background
   z-index: 1;
 

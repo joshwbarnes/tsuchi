@@ -48,6 +48,7 @@
 }
 
 .list-link{
+  margin-left: 8px;
   &.active{
     background-color: #f5c0c0 !important;
     height: 65px !important;
@@ -76,3 +77,15 @@
   right: 30px;
   font-size: 3rem;
 }
+
+
+.btn-all-items {
+  text-decoration: none;
+  font-family: $main-text;
+  background-color: $stroke;
+  color: $tertiary;
+  margin-left: 8px;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
