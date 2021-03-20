@@ -19,7 +19,9 @@
   </div>
 
 <!-- action for list -->
-<%= link_to"View all items", list_path(@my_list), class: 'btn-all-items' %>
+<%= link_to list_path(@my_list), class: 'btn-all-items'  do %>
+  <i class="fas fa-list-ul"></i>
+<% end %>
 
   <!-- This is the 'burger' icon that will open the menu -->
   <div class="menu-activate-burger">
