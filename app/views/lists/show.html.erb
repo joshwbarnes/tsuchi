@@ -19,13 +19,11 @@
   </div>
 
 <!-- action for list -->
-<%= link_to list_path(@my_list), class: 'btn-all-items'  do %>
-  <i class="fas fa-list-ul"></i>
-<% end %>
+<%= link_to 'All items', list_path(@my_list), class: 'btn-all-items' %>
 
   <!-- This is the 'burger' icon that will open the menu -->
   <div class="menu-activate-burger">
-    <i class="fas fa-ellipsis-v"></i>
+    <i class="fas fa-bars burger-menu"></i>
   </div>
   
   <!-- Side nav/panel to get to dashboard -->
