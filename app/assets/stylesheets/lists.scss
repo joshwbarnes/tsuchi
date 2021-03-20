@@ -2,41 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.main-page{
-  padding:9px;
+.main-page {
+  padding: 9px;
 }
-.list{
+.list {
   margin: 0;
-  padding: 0% 2%;
+  padding: 0px 8px;
 }
 
 .list-name{
   font-size:13px;
 }
 
-.fa-plus{
+.fa-plus {
   font-size: 30px;
   color: #00917c;
-  margin:0;
+  margin: 0;
   margin-right: 17px;
 }
 
-.fa-bell{
-  font-size:2rem;
+.fa-bell {
+  font-size: 2rem;
   margin-left: 8px;
   color: #28527a;
 }
 
-.container-list{
+.container-list {
   display: flex;
   align-items: center;
-  padding-bottom:10px;
+  padding-bottom: 10px;
   overflow-x: scroll;
   margin-bottom: 10px;
-  max-width:80%;
+  max-width: 80%;
 }
 
-.fa-home{
+.fa-home {
   font-size: 2rem;
 }
 #container-add-list {
@@ -59,10 +59,10 @@
   line-height: 40px;
 }
 
-.due-date{
+.due-date {
   display: flex;
 }
 
-.form-hidden{
+.form-hidden {
   display:none;
 }
