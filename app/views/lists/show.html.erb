@@ -7,13 +7,13 @@
  <div class="container-list">
     <div class="row w-100">
         <div class="col d-flex">
-                   <% @link_list.compact.each do |list| %>
-            <ul class="list">
+          <ul class="list">
+            <% @link_list.compact.each do |list| %>
               <li id="btn-list" class="list-link <%=  'active' if params[:list_id].to_i == list.id %>" >
                 <span><%= link_to "#{list.name}", list_path(list, list_id: list.id), class: "text-dark list-name" %></span>
               </li>
-            </ul>
-          <% end %>
+          </ul>
+            <% end %>
         </div>
      </div>
   </div>
